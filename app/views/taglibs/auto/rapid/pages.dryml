@@ -5,8 +5,128 @@
 <def tag="main-nav">
   <navigation class="main-nav" merge-attrs param="default">
     <nav-item href="#{base_url}/">Home</nav-item>
+    <nav-item with="&Timeline"><ht key="timeline.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
   </navigation>
 </def>
+
+
+
+
+<!-- ====== Timeline Pages ====== -->
+
+<def tag="index-page" for="Timeline">
+  <page merge title="#{ht 'timeline.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page timeline" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="timeline.index.heading">
+            <model-name-human model="&model"/>
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="timeline.collection.count" count="&collection_count">
+            <count summary/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+        <a action="new" to="&model" param="new-link">
+          <ht key="timeline.actions.new">New Timeline</ht>
+        </a>
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Timeline">
+  <page merge title="#{ht 'timeline.new.title', :default=>[' New Timeline'] }">
+    <body: class="new-page timeline" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="timeline.new.heading">
+            New Timeline
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'timeline.actions.create', :default=>['Create Timeline']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Timeline">
+  <page merge title="#{ht 'timeline.show.title', :default=>['Timeline'], :name => name(:no_wrapper => true) }">
+
+    <body: class="show-page timeline" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading">
+              <ht key="timeline.show.heading" name="#{name(:no_wrapper => true)}">
+                Timeline <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">
+              <ht key="timeline.actions.edit" name="#{name(:no_wrapper => true)}">
+                Edit Timeline
+              </ht>
+            </a>
+          </header>
+
+          <section param="content-body">
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Timeline">
+  <page merge title="#{ht 'timeline.edit.title', :default=>['Edit Timeline'], :name => name(:no_wrapper => true) }">
+
+    <body: class="edit-page timeline" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="timeline.edit.heading" name="#{name(:no_wrapper => true)}">
+            Edit Timeline
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'timeline.actions.delete', :default=>['Remove This Timeline']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
 
 
 
