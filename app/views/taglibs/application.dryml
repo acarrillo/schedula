@@ -2,12 +2,14 @@
 <include src="taglibs/auto/rapid/cards"/>
 <include src="taglibs/auto/rapid/pages"/>
 <include src="taglibs/auto/rapid/forms"/>
+
 <extend tag="card" for="Timeline">
 	<old-card merge>
-		<append-body:>
+		<body: param>
+			Owner: <a:owner param="creator-link"/>
 			<div class="events">
-				Events: <repeat:events join=", "><a/></repeat><else>None</else>
+			Events: <repeat:events join=", "><a/></repeat><else>None</else>
 			</div>
-		</append-body:>
+		</body:>
 	</old-card>
 </extend>

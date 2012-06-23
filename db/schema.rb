@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120623184901) do
+ActiveRecord::Schema.define(:version => 20120623204537) do
 
   create_table "event_assignments", :force => true do |t|
     t.datetime "created_at"
@@ -35,7 +35,10 @@ ActiveRecord::Schema.define(:version => 20120623184901) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "owner_id"
   end
+
+  add_index "timelines", ["owner_id"], :name => "index_timelines_on_owner_id"
 
   create_table "users", :force => true do |t|
     t.string   "crypted_password",          :limit => 40
