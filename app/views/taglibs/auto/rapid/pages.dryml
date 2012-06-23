@@ -99,6 +99,16 @@
 
           <section param="content-body">
             <view:description param="description" />
+            <field-list fields="start, finish" param/>
+            <section param="collection-section">
+              <h3 param="collection-heading">
+                <ht key="timeline.collection.heading" count="&this.timelines.count" >
+                  <human-collection-name collection="timelines" your/>
+                </ht>
+              </h3>
+
+              <collection:timelines param/>
+            </section>
           </section>
     </content:>
 
@@ -202,6 +212,7 @@
 
     <content: param>
           <header param="content-header">
+            <a:events param="parent-link">&laquo; <ht key="timeline.actions.back_to_parent" parent="Event" name="&this">Back to <name/></ht></a:events>
             <h2 param="heading">
               <ht key="timeline.show.heading" name="#{name(:no_wrapper => true)}">
                 Timeline <name/>
@@ -331,7 +342,7 @@
               </ht>
             </h2>
 
-            <record-flags fields="" param/>
+            <record-flags fields="administrator" param/>
 
             <a action="edit" if="&can_edit?" param="edit-link">
               <ht key="user.actions.edit" name="#{name(:no_wrapper => true)}">
@@ -341,6 +352,7 @@
           </header>
 
           <section param="content-body">
+            <field-list fields="email_address, state" param/>
           </section>
     </content:>
 

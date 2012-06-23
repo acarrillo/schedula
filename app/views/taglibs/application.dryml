@@ -1,1 +1,17 @@
 <!-- Global taglib - these tags are shared across all subsites -->
+
+<include src="taglibs/auto/rapid/cards"/>
+ <include src="taglibs/auto/rapid/pages"/>
+ <include src="taglibs/auto/rapid/forms"/>
+ 
+ <!--set-theme name="clean"/-->
+
+<extend tag="card" for="Event">
+  <old-card merge>
+    <append-body:>
+    <div class="users">
+      Timelines: <repeat:timelines join=", "><a/></repeat><else>None</else>
+    </div>
+    </append-body:>
+  </old-card>
+</extend>

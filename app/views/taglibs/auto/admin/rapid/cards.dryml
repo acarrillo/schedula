@@ -7,6 +7,9 @@
     </header:>
     <body: param>
       <view:description param="description"/>
+      <ht key="timeline.collection.count" count="&this.timelines.size">
+         <count:timelines param/>
+      </ht>
     </body:>
   </card>
 </def>
