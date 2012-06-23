@@ -5,6 +5,16 @@
 HoboApp::Application.routes.draw do
 
 
+  # Resource routes for controller "events"
+  get 'events(.:format)' => 'events#index', :as => 'events'
+  get 'events/new(.:format)', :as => 'new_event'
+  get 'events/:id/edit(.:format)' => 'events#edit', :as => 'edit_event'
+  get 'events/:id(.:format)' => 'events#show', :as => 'event', :constraints => { :id => %r([^/.?]+) }
+  post 'events(.:format)' => 'events#create', :as => 'create_event'
+  put 'events/:id(.:format)' => 'events#update', :as => 'update_event', :constraints => { :id => %r([^/.?]+) }
+  delete 'events/:id(.:format)' => 'events#destroy', :as => 'destroy_event', :constraints => { :id => %r([^/.?]+) }
+
+
   # Lifecycle routes for controller "users"
   post 'users/signup(.:format)' => 'users#do_signup', :as => 'do_user_signup'
   get 'users/signup(.:format)' => 'users#signup', :as => 'user_signup'

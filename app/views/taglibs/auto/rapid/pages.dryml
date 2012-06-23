@@ -5,9 +5,131 @@
 <def tag="main-nav">
   <navigation class="main-nav" merge-attrs param="default">
     <nav-item href="#{base_url}/">Home</nav-item>
+    <nav-item with="&Event"><ht key="event.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
     <nav-item with="&Timeline"><ht key="timeline.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
   </navigation>
 </def>
+
+
+
+
+<!-- ====== Event Pages ====== -->
+
+<def tag="index-page" for="Event">
+  <page merge title="#{ht 'event.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page event" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="event.index.heading">
+            <model-name-human model="&model"/>
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="event.collection.count" count="&collection_count">
+            <count summary/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+        <a action="new" to="&model" param="new-link">
+          <ht key="event.actions.new">New Event</ht>
+        </a>
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Event">
+  <page merge title="#{ht 'event.new.title', :default=>[' New Event'] }">
+    <body: class="new-page event" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="event.new.heading">
+            New Event
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'event.actions.create', :default=>['Create Event']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Event">
+  <page merge title="#{ht 'event.show.title', :default=>['Event'], :name => name(:no_wrapper => true) }">
+
+    <body: class="show-page event" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading">
+              <ht key="event.show.heading" name="#{name(:no_wrapper => true)}">
+                Event <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">
+              <ht key="event.actions.edit" name="#{name(:no_wrapper => true)}">
+                Edit Event
+              </ht>
+            </a>
+          </header>
+
+          <section param="content-body">
+            <view:description param="description" />
+            <field-list fields="start, finish" param/>
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Event">
+  <page merge title="#{ht 'event.edit.title', :default=>['Edit Event'], :name => name(:no_wrapper => true) }">
+
+    <body: class="edit-page event" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="event.edit.heading" name="#{name(:no_wrapper => true)}">
+            Edit Event
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'event.actions.delete', :default=>['Remove This Event']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
 
 
 
