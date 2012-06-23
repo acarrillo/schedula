@@ -2,15 +2,12 @@
 <include src="taglibs/auto/rapid/cards"/>
 <include src="taglibs/auto/rapid/pages"/>
 <include src="taglibs/auto/rapid/forms"/>
-
-<set-theme name="clean"/>
-
 <extend tag="card" for="Timeline">
-    <old-card merge>
-        <append-body:>
-            <div class="events">
-                Events: <repeat:events join=", "><a/></repeat><else>None</else>
-            </div>
-        </append-body:>
-    </old-card>
+	<old-card merge>
+		<append-body:>
+			<div class="events">
+				Events: <repeat:events join=", "><a/></repeat><else>None</else>
+			</div>
+		</append-body:>
+	</old-card>
 </extend>

@@ -8,6 +8,14 @@
   </card>
 </def>
 
+<def tag="card" for="EventAssignment">
+  <card class="event-assignment" param="default" merge>
+    <header: param>
+      <h4 param="heading"><name/></h4>
+    </header:>
+  </card>
+</def>
+
 <def tag="card" for="Timeline">
   <card class="timeline" param="default" merge>
     <header: param>

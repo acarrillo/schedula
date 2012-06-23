@@ -842,3 +842,1353 @@ Migrating to HoboMigration2 (20120623170356)
   [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("timelines")[0m
   [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
   [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_users_on_state')[0m
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from /Users/acarrillo/schedula/app/controllers/application_controller.rb:1)
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+
+Started GET "/" for 10.69.10.220 at Sat Jun 23 14:03:52 -0400 2012
+  Processing by FrontController#index as HTML
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/dryml-1.3.0/taglibs/core.dryml in 0.08s
+  DRYML: Compiled app/views/taglibs/application.dryml in 0.00s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_core.dryml in 0.22s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_support.dryml in 0.01s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_document_tags.dryml in 0.07s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_pages.dryml in 0.18s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_editing.dryml in 0.09s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_forms.dryml in 0.34s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_navigation.dryml in 0.09s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_plus.dryml in 0.17s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_generics.dryml in 0.02s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_lifecycles.dryml in 0.01s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_summary.dryml in 0.18s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_user_pages.dryml in 0.25s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_i18n.dryml in 0.01s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid.dryml in 1.65s
+  DRYML: Compiled app/views/taglibs/auto/rapid/cards.dryml in 0.08s
+  DRYML: Compiled app/views/taglibs/auto/rapid/pages.dryml in 0.45s
+  DRYML: Compiled app/views/taglibs/auto/rapid/forms.dryml in 0.09s
+  DRYML: Compiled app/views/taglibs/themes/clean/clean.dryml in 0.01s
+  DRYML: Compiled app/views/taglibs/front_site.dryml in 2.29s
+  DRYML: Compiled app/views/front/index.dryml in 2.38s
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 30[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM "users"
+Rendered front/index.dryml (2502.4ms)
+Completed 200 OK in 2508ms (Views: 2504.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/timelines" for 10.69.10.220 at Sat Jun 23 14:03:59 -0400 2012
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  Processing by TimelinesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mTimeline Load (0.2ms)[0m  SELECT "timelines".* FROM "timelines" LIMIT 30 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "timelines".* FROM "timelines" LIMIT 30 OFFSET 0[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" LIMIT 30
+Rendered controller: timelines; dryml-tag: index-page (50.9ms)
+Completed 200 OK in 222ms (Views: 217.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/admin/users" for 10.69.10.220 at Sat Jun 23 14:05:08 -0400 2012
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" LIMIT 30 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 30 OFFSET 0[0m
+  DRYML: Compiled app/views/taglibs/auto/admin/rapid/cards.dryml in 0.09s
+  DRYML: Compiled app/views/taglibs/auto/admin/rapid/pages.dryml in 0.21s
+  DRYML: Compiled app/views/taglibs/auto/admin/rapid/forms.dryml in 0.10s
+  DRYML: Compiled app/views/taglibs/admin_site.dryml in 0.48s
+  DRYML: Compiled app/views/admin/users/index.dryml in 0.49s
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" LIMIT 30
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+Rendered admin/users/index.dryml (606.8ms)
+Completed 200 OK in 612ms (Views: 608.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/timelines" for 10.69.10.220 at Sat Jun 23 14:05:11 -0400 2012
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  Processing by TimelinesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mTimeline Load (0.2ms)[0m  [1mSELECT "timelines".* FROM "timelines" LIMIT 30 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "timelines".* FROM "timelines" LIMIT 30 OFFSET 0
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 30[0m
+Rendered controller: timelines; dryml-tag: index-page (121.8ms)
+Completed 200 OK in 232ms (Views: 227.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/timelines/1-mit-splash" for 10.69.10.220 at Sat Jun 23 14:05:14 -0400 2012
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  Processing by TimelinesController#show as HTML
+  Parameters: {"id"=>"1-mit-splash"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mTimeline Load (0.1ms)[0m  [1mSELECT "timelines".* FROM "timelines" WHERE "timelines"."id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" LIMIT 30
+Rendered controller: timelines; dryml-tag: show-page (41.2ms)
+Completed 200 OK in 219ms (Views: 213.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/admin/users" for 10.69.10.220 at Sat Jun 23 14:05:27 -0400 2012
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  Processing by Admin::UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" LIMIT 30 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 30 OFFSET 0[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" LIMIT 30
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+Rendered admin/users/index.dryml (274.7ms)
+Completed 200 OK in 280ms (Views: 276.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 10.69.10.220 at Sat Jun 23 14:05:31 -0400 2012
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  Processing by FrontController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 30[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM "users"
+Rendered front/index.dryml (213.7ms)
+Completed 200 OK in 217ms (Views: 215.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/timelines" for 10.69.10.220 at Sat Jun 23 14:06:20 -0400 2012
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  Processing by TimelinesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mTimeline Load (0.1ms)[0m  SELECT "timelines".* FROM "timelines" LIMIT 30 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "timelines".* FROM "timelines" LIMIT 30 OFFSET 0[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" LIMIT 30
+Rendered controller: timelines; dryml-tag: index-page (119.6ms)
+Completed 200 OK in 230ms (Views: 226.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/events" for 10.69.10.220 at Sat Jun 23 14:06:46 -0400 2012
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" LIMIT 30 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "events".* FROM "events" LIMIT 30 OFFSET 0[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" LIMIT 30
+Rendered controller: events; dryml-tag: index-page (54.5ms)
+Completed 200 OK in 229ms (Views: 225.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/timelines" for 10.69.10.220 at Sat Jun 23 14:06:51 -0400 2012
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  Processing by TimelinesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mTimeline Load (0.2ms)[0m  SELECT "timelines".* FROM "timelines" LIMIT 30 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "timelines".* FROM "timelines" LIMIT 30 OFFSET 0[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" LIMIT 30
+Rendered controller: timelines; dryml-tag: index-page (121.0ms)
+Completed 200 OK in 232ms (Views: 227.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/timelines/1-mit-splash" for 10.69.10.220 at Sat Jun 23 14:07:44 -0400 2012
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  Processing by TimelinesController#show as HTML
+  Parameters: {"id"=>"1-mit-splash"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mTimeline Load (0.2ms)[0m  SELECT "timelines".* FROM "timelines" WHERE "timelines"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 30[0m
+Rendered controller: timelines; dryml-tag: show-page (119.1ms)
+Completed 200 OK in 230ms (Views: 223.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/timelines" for 10.69.10.220 at Sat Jun 23 14:07:48 -0400 2012
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  Processing by TimelinesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mTimeline Load (0.1ms)[0m  [1mSELECT "timelines".* FROM "timelines" LIMIT 30 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "timelines".* FROM "timelines" LIMIT 30 OFFSET 0
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 30[0m
+Rendered controller: timelines; dryml-tag: index-page (55.8ms)
+Completed 200 OK in 235ms (Views: 230.9ms | ActiveRecord: 1.5ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from /Users/acarrillo/schedula/app/controllers/application_controller.rb:1)
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+
+Started GET "/timelines" for 10.69.10.220 at Sat Jun 23 14:08:57 -0400 2012
+  Processing by TimelinesController#index as HTML
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mTimeline Load (0.1ms)[0m  [1mSELECT "timelines".* FROM "timelines" LIMIT 30 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "timelines".* FROM "timelines" LIMIT 30 OFFSET 0
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/dryml-1.3.0/taglibs/core.dryml in 0.08s
+  DRYML: Compiled app/views/taglibs/application.dryml in 0.00s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_core.dryml in 0.18s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_support.dryml in 0.01s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_document_tags.dryml in 0.07s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_pages.dryml in 0.17s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_editing.dryml in 0.09s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_forms.dryml in 0.28s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_navigation.dryml in 0.09s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_plus.dryml in 0.16s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_generics.dryml in 0.02s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_lifecycles.dryml in 0.01s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_summary.dryml in 0.17s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_user_pages.dryml in 0.20s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_i18n.dryml in 0.01s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid.dryml in 1.46s
+  DRYML: Compiled app/views/taglibs/auto/rapid/cards.dryml in 0.08s
+  DRYML: Compiled app/views/taglibs/auto/rapid/pages.dryml in 0.38s
+  DRYML: Compiled app/views/taglibs/auto/rapid/forms.dryml in 0.10s
+  DRYML: Compiled app/views/taglibs/themes/clean/clean.dryml in 0.01s
+  DRYML: Compiled app/views/taglibs/front_site.dryml in 2.04s
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 30[0m
+Rendered controller: timelines; dryml-tag: index-page (125.8ms)
+Completed 200 OK in 2269ms (Views: 2263.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 10.69.10.220 at Sat Jun 23 14:17:57 -0400 2012
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  Processing by FrontController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  DRYML: Compiled app/views/front/index.dryml in 0.17s
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 30[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM "users"
+Rendered front/index.dryml (209.4ms)
+Completed 200 OK in 215ms (Views: 211.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/timelines" for 10.69.10.220 at Sat Jun 23 14:18:41 -0400 2012
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  Processing by TimelinesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mTimeline Load (0.1ms)[0m  SELECT "timelines".* FROM "timelines" LIMIT 30 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "timelines".* FROM "timelines" LIMIT 30 OFFSET 0[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" LIMIT 30
+Rendered controller: timelines; dryml-tag: index-page (111.7ms)
+Completed 200 OK in 224ms (Views: 219.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/timelines" for 10.69.10.220 at Sat Jun 23 14:23:52 -0400 2012
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  Processing by TimelinesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mTimeline Load (0.1ms)[0m  SELECT "timelines".* FROM "timelines" LIMIT 30 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "timelines".* FROM "timelines" LIMIT 30 OFFSET 0[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" LIMIT 30
+Rendered controller: timelines; dryml-tag: index-page (121.8ms)
+Completed 200 OK in 294ms (Views: 289.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/timelines/1-mit-splash" for 10.69.10.220 at Sat Jun 23 14:23:55 -0400 2012
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  Processing by TimelinesController#show as HTML
+  Parameters: {"id"=>"1-mit-splash"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mTimeline Load (0.1ms)[0m  SELECT "timelines".* FROM "timelines" WHERE "timelines"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 30[0m
+Rendered controller: timelines; dryml-tag: show-page (108.0ms)
+Completed 200 OK in 222ms (Views: 215.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/timelines/1-mit-splash" for 10.69.10.220 at Sat Jun 23 14:23:58 -0400 2012
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  Processing by TimelinesController#show as HTML
+  Parameters: {"id"=>"1-mit-splash"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mTimeline Load (0.1ms)[0m  [1mSELECT "timelines".* FROM "timelines" WHERE "timelines"."id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" LIMIT 30
+Rendered controller: timelines; dryml-tag: show-page (110.7ms)
+Completed 200 OK in 231ms (Views: 224.6ms | ActiveRecord: 1.5ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from /Users/acarrillo/schedula/app/controllers/application_controller.rb:1)
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+
+Started GET "/timelines/1-mit-splash" for 10.69.10.220 at Sat Jun 23 14:25:10 -0400 2012
+  Processing by TimelinesController#show as HTML
+  Parameters: {"id"=>"1-mit-splash"}
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mTimeline Load (0.1ms)[0m  [1mSELECT "timelines".* FROM "timelines" WHERE "timelines"."id" = 1 LIMIT 1[0m
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/dryml-1.3.0/taglibs/core.dryml in 0.08s
+  DRYML: Compiled app/views/taglibs/auto/rapid/cards.dryml in 0.07s
+  DRYML: Compiled app/views/taglibs/auto/rapid/pages.dryml in 0.36s
+  DRYML: Compiled app/views/taglibs/auto/rapid/forms.dryml in 0.08s
+  DRYML: Compiled app/views/taglibs/themes/clean/clean.dryml in 0.01s
+  DRYML: Compiled app/views/taglibs/application.dryml in 0.53s
+Completed 500 Internal Server Error in 635ms
+
+NameError (undefined method `page' for class `#<Class:0x1093e60c0>'):
+  
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (12.2ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.15/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.5ms)
+
+
+Started GET "/" for 10.69.10.220 at Sat Jun 23 14:25:21 -0400 2012
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  Processing by FrontController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered front/index.dryml (92.0ms)
+Completed 500 Internal Server Error in 96ms
+
+ActionView::Template::Error (undefined method `page' for class `#<Class:0x109223ee0>'):
+    1: <page title="Home">
+    2: 
+    3:   <body: class="front-page"/>
+    4: 
+  app/views/front/index.dryml:1:in `_app_views_front_index_dryml___1245881838_2224108480_0'
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (13.4ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.15/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (19.6ms)
+
+
+Started GET "/" for 10.69.10.220 at Sat Jun 23 14:30:04 -0400 2012
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  Processing by FrontController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered front/index.dryml (34.0ms)
+Completed 500 Internal Server Error in 38ms
+
+ActionView::Template::Error (undefined method `page' for class `#<Class:0x10933c6b0>'):
+    1: <page title="Home">
+    2: 
+    3:   <body: class="front-page"/>
+    4: 
+  app/views/front/index.dryml:1:in `_app_views_front_index_dryml___1245881838_2224684760_0'
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (77.9ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.15/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (83.2ms)
+
+
+Started GET "/" for 10.69.10.220 at Sat Jun 23 14:30:37 -0400 2012
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  Processing by FrontController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered front/index.dryml (34.6ms)
+Completed 500 Internal Server Error in 38ms
+
+ActionView::Template::Error (undefined method `page' for class `#<Class:0x10b70a920>'):
+    1: <page title="Home">
+    2: 
+    3:   <body: class="front-page"/>
+    4: 
+  app/views/front/index.dryml:1:in `_app_views_front_index_dryml___1245881838_2243455640_0'
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (11.6ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.15/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (17.0ms)
+
+
+Started GET "/timelines/1" for 10.69.10.220 at Sat Jun 23 14:32:35 -0400 2012
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  Processing by TimelinesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mTimeline Load (0.1ms)[0m  SELECT "timelines".* FROM "timelines" WHERE "timelines"."id" = 1 LIMIT 1
+Completed 500 Internal Server Error in 34ms
+
+NameError (undefined method `page' for class `#<Class:0x10b8f3480>'):
+  
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (12.9ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.15/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.2ms)
+
+
+Started GET "/timelines/1" for 10.69.10.220 at Sat Jun 23 14:33:06 -0400 2012
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  Processing by TimelinesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mTimeline Load (0.1ms)[0m  SELECT "timelines".* FROM "timelines" WHERE "timelines"."id" = 1 LIMIT 1
+Completed 500 Internal Server Error in 34ms
+
+NameError (undefined method `page' for class `#<Class:0x10b509590>'):
+  
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (12.6ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.15/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.1ms)
+
+
+Started GET "/timelines" for 10.69.10.220 at Sat Jun 23 14:33:08 -0400 2012
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  Processing by TimelinesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mTimeline Load (0.1ms)[0m  SELECT "timelines".* FROM "timelines" LIMIT 30 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "timelines".* FROM "timelines" LIMIT 30 OFFSET 0[0m
+Completed 500 Internal Server Error in 33ms
+
+NameError (undefined method `page' for class `#<Class:0x10b809c90>'):
+  
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (17.2ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.15/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (22.8ms)
+
+
+Started GET "/timelines" for 10.69.10.220 at Sat Jun 23 14:35:06 -0400 2012
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  Processing by TimelinesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mTimeline Load (0.1ms)[0m  [1mSELECT "timelines".* FROM "timelines" LIMIT 30 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "timelines".* FROM "timelines" LIMIT 30 OFFSET 0
+  DRYML: Compiled app/views/taglibs/application.dryml in 0.03s
+Completed 500 Internal Server Error in 38ms
+
+NameError (undefined method `page' for class `#<Class:0x10b4db438>'):
+  
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.4ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (17.7ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.15/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (26.0ms)
+
+
+Started GET "/timelines" for 10.69.10.220 at Sat Jun 23 14:35:07 -0400 2012
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  Processing by TimelinesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mTimeline Load (0.1ms)[0m  SELECT "timelines".* FROM "timelines" LIMIT 30 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "timelines".* FROM "timelines" LIMIT 30 OFFSET 0[0m
+Completed 500 Internal Server Error in 34ms
+
+NameError (undefined method `page' for class `#<Class:0x10b606678>'):
+  
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (16.0ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.15/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (21.9ms)
+
+
+Started GET "/timelines" for 10.69.10.220 at Sat Jun 23 14:35:13 -0400 2012
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  Processing by TimelinesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mTimeline Load (0.2ms)[0m  [1mSELECT "timelines".* FROM "timelines" LIMIT 30 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "timelines".* FROM "timelines" LIMIT 30 OFFSET 0
+  DRYML: Compiled app/views/taglibs/application.dryml in 0.00s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_core.dryml in 0.18s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_support.dryml in 0.01s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_document_tags.dryml in 0.02s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_pages.dryml in 0.19s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_editing.dryml in 0.09s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_forms.dryml in 0.36s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_navigation.dryml in 0.09s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_plus.dryml in 0.11s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_generics.dryml in 0.07s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_lifecycles.dryml in 0.01s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_summary.dryml in 0.11s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_user_pages.dryml in 0.28s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_i18n.dryml in 0.01s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid.dryml in 1.54s
+  DRYML: Compiled app/views/taglibs/front_site.dryml in 1.58s
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 30[0m
+Rendered controller: timelines; dryml-tag: index-page (127.7ms)
+Completed 200 OK in 1779ms (Views: 1722.0ms | ActiveRecord: 1.6ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from /Users/acarrillo/schedula/app/controllers/application_controller.rb:1)
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+
+Started GET "/" for 10.69.10.220 at Sat Jun 23 14:39:40 -0400 2012
+  Processing by FrontController#index as HTML
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/dryml-1.3.0/taglibs/core.dryml in 0.08s
+  DRYML: Compiled app/views/taglibs/application.dryml in 0.00s
+Rendered front/index.dryml (110.9ms)
+Completed 500 Internal Server Error in 117ms
+
+ActionView::Template::Error (undefined method `card__for_timeline' for class `#<Class:0x1087d9f20>'):
+    1: <page title="Home">
+    2: 
+    3:   <body: class="front-page"/>
+    4: 
+  app/views/front/index.dryml:1:in `_app_views_front_index_dryml___1020095030_2218865860_0'
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (66.5ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.15/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (72.6ms)
+
+
+Started GET "/" for 10.69.10.220 at Sat Jun 23 14:42:13 -0400 2012
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  Processing by FrontController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  DRYML: Compiled app/views/taglibs/application.dryml in 0.01s
+Rendered front/index.dryml (22.7ms)
+Completed 500 Internal Server Error in 29ms
+
+ActionView::Template::Error (undefined method `card__for_event' for class `#<Class:0x108bb9280>'):
+    1: <page title="Home">
+    2: 
+    3:   <body: class="front-page"/>
+    4: 
+  app/views/front/index.dryml:1:in `_app_views_front_index_dryml___1020095030_2220755120_0'
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (12.1ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.15/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (17.4ms)
+
+
+Started GET "/" for 10.69.10.220 at Sat Jun 23 14:42:14 -0400 2012
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  Processing by FrontController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered front/index.dryml (61.1ms)
+Completed 500 Internal Server Error in 65ms
+
+ActionView::Template::Error (undefined method `card__for_event' for class `#<Class:0x10879b720>'):
+    1: <page title="Home">
+    2: 
+    3:   <body: class="front-page"/>
+    4: 
+  app/views/front/index.dryml:1:in `_app_views_front_index_dryml___1020095030_2218585840_0'
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.15/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.15/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (13.2ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.15/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (18.5ms)
+
+
+Started GET "/" for 10.69.10.220 at Sat Jun 23 14:42:39 -0400 2012
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  Processing by FrontController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  DRYML: Compiled app/views/taglibs/auto/rapid/cards.dryml in 0.07s
+  DRYML: Compiled app/views/taglibs/auto/rapid/pages.dryml in 0.43s
+  DRYML: Compiled app/views/taglibs/auto/rapid/forms.dryml in 0.10s
+  DRYML: Compiled app/views/taglibs/application.dryml in 0.61s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_core.dryml in 0.24s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_support.dryml in 0.01s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_document_tags.dryml in 0.02s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_pages.dryml in 0.25s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_editing.dryml in 0.10s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_forms.dryml in 0.38s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_navigation.dryml in 0.09s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_plus.dryml in 0.18s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_generics.dryml in 0.02s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_lifecycles.dryml in 0.01s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_summary.dryml in 0.20s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_user_pages.dryml in 0.33s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid_i18n.dryml in 0.01s
+  DRYML: Compiled /Library/Ruby/Gems/1.8/gems/hobo-1.3.0/lib/hobo/rapid/taglibs/rapid.dryml in 1.85s
+  DRYML: Compiled app/views/taglibs/themes/clean/clean.dryml in 0.01s
+  DRYML: Compiled app/views/taglibs/front_site.dryml in 1.87s
+  DRYML: Compiled app/views/front/index.dryml in 2.49s
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" LIMIT 30
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+Rendered front/index.dryml (2619.4ms)
+Completed 200 OK in 2625ms (Views: 2621.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/timelines" for 10.69.10.220 at Sat Jun 23 14:42:44 -0400 2012
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  Processing by TimelinesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mTimeline Load (0.1ms)[0m  [1mSELECT "timelines".* FROM "timelines" LIMIT 30 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "timelines".* FROM "timelines" LIMIT 30 OFFSET 0
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 30[0m
+Rendered controller: timelines; dryml-tag: index-page (119.8ms)
+Completed 200 OK in 235ms (Views: 230.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/events" for 10.69.10.220 at Sat Jun 23 14:42:45 -0400 2012
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  Processing by EventsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" LIMIT 30 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "events".* FROM "events" LIMIT 30 OFFSET 0
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 30[0m
+Rendered controller: events; dryml-tag: index-page (117.6ms)
+Completed 200 OK in 297ms (Views: 293.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/events" for 10.69.10.220 at Sat Jun 23 14:42:53 -0400 2012
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  Processing by EventsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" LIMIT 30 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "events".* FROM "events" LIMIT 30 OFFSET 0
+  DRYML: Compiled app/views/taglibs/application.dryml in 0.02s
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 30[0m
+Rendered controller: events; dryml-tag: index-page (119.2ms)
+Completed 200 OK in 239ms (Views: 235.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/timelines" for 10.69.10.220 at Sat Jun 23 14:42:55 -0400 2012
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  Processing by TimelinesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mTimeline Load (0.1ms)[0m  [1mSELECT "timelines".* FROM "timelines" LIMIT 30 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "timelines".* FROM "timelines" LIMIT 30 OFFSET 0
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 30[0m
+Rendered controller: timelines; dryml-tag: index-page (119.7ms)
+Completed 200 OK in 299ms (Views: 295.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 10.69.10.220 at Sat Jun 23 14:49:19 -0400 2012
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  Processing by FrontController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  DRYML: Compiled app/views/taglibs/application.dryml in 0.03s
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 30[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM "users"
+Rendered front/index.dryml (221.3ms)
+Completed 200 OK in 225ms (Views: 222.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/timelines" for 10.69.10.220 at Sat Jun 23 14:49:21 -0400 2012
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  Processing by TimelinesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mTimeline Load (0.2ms)[0m  SELECT "timelines".* FROM "timelines" LIMIT 30 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "timelines".* FROM "timelines" LIMIT 30 OFFSET 0[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" LIMIT 30
+Rendered controller: timelines; dryml-tag: index-page (117.0ms)
+Completed 200 OK in 297ms (Views: 292.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/events" for 10.69.10.220 at Sat Jun 23 14:49:26 -0400 2012
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events" LIMIT 30 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "events".* FROM "events" LIMIT 30 OFFSET 0[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" LIMIT 30
+Rendered controller: events; dryml-tag: index-page (164.8ms)
+Completed 200 OK in 321ms (Views: 315.4ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/events/1-physical-security" for 10.69.10.220 at Sat Jun 23 14:49:30 -0400 2012
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1-physical-security"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 30[0m
+Rendered controller: events; dryml-tag: show-page (158.3ms)
+Completed 200 OK in 397ms (Views: 388.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/events/1-physical-security/edit" for 10.69.10.220 at Sat Jun 23 14:49:33 -0400 2012
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1-physical-security"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" LIMIT 30
+Rendered controller: events; dryml-tag: edit-page (297.5ms)
+Completed 200 OK in 418ms (Views: 409.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/timelines" for 10.69.10.220 at Sat Jun 23 14:49:40 -0400 2012
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  Processing by TimelinesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mTimeline Load (0.2ms)[0m  SELECT "timelines".* FROM "timelines" LIMIT 30 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "timelines".* FROM "timelines" LIMIT 30 OFFSET 0[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" LIMIT 30
+Rendered controller: timelines; dryml-tag: index-page (162.8ms)
+Completed 200 OK in 316ms (Views: 311.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/timelines/1-mit-splash" for 10.69.10.220 at Sat Jun 23 14:49:44 -0400 2012
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  Processing by TimelinesController#show as HTML
+  Parameters: {"id"=>"1-mit-splash"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mTimeline Load (0.1ms)[0m  SELECT "timelines".* FROM "timelines" WHERE "timelines"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 30[0m
+Rendered controller: timelines; dryml-tag: show-page (43.9ms)
+Completed 200 OK in 230ms (Views: 223.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/timelines/1-mit-splash/edit" for 10.69.10.220 at Sat Jun 23 14:49:45 -0400 2012
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  Processing by TimelinesController#edit as HTML
+  Parameters: {"id"=>"1-mit-splash"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mTimeline Load (0.1ms)[0m  [1mSELECT "timelines".* FROM "timelines" WHERE "timelines"."id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" LIMIT 30
+Rendered controller: timelines; dryml-tag: edit-page (125.6ms)
+Completed 200 OK in 244ms (Views: 238.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/timelines/1-mit-splash" for 10.69.10.220 at Sat Jun 23 14:50:19 -0400 2012
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  Processing by TimelinesController#show as HTML
+  Parameters: {"id"=>"1-mit-splash"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mTimeline Load (0.1ms)[0m  SELECT "timelines".* FROM "timelines" WHERE "timelines"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 30[0m
+Rendered controller: timelines; dryml-tag: show-page (56.3ms)
+Completed 200 OK in 260ms (Views: 254.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/admin/users" for 10.69.10.220 at Sat Jun 23 14:50:22 -0400 2012
+  [1m[35mSQL (0.6ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  Processing by Admin::UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 30 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" LIMIT 30 OFFSET 0
+  DRYML: Compiled app/views/taglibs/auto/admin/rapid/cards.dryml in 0.09s
+  DRYML: Compiled app/views/taglibs/auto/admin/rapid/pages.dryml in 0.23s
+  DRYML: Compiled app/views/taglibs/auto/admin/rapid/forms.dryml in 0.10s
+  DRYML: Compiled app/views/taglibs/admin_site.dryml in 0.51s
+  DRYML: Compiled app/views/admin/users/index.dryml in 0.54s
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 30[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM "users"
+Rendered admin/users/index.dryml (657.9ms)
+Completed 200 OK in 666ms (Views: 661.4ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for 10.69.10.220 at Sat Jun 23 14:50:30 -0400 2012
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (73.9ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  Processing by FrontController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" LIMIT 30
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+Rendered front/index.dryml (223.3ms)
+Completed 200 OK in 227ms (Views: 224.6ms | ActiveRecord: 75.3ms)
+
+
+Started GET "/timelines" for 10.69.10.220 at Sat Jun 23 14:50:34 -0400 2012
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  Processing by TimelinesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mTimeline Load (0.2ms)[0m  [1mSELECT "timelines".* FROM "timelines" LIMIT 30 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "timelines".* FROM "timelines" LIMIT 30 OFFSET 0
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 30[0m
+Rendered controller: timelines; dryml-tag: index-page (118.9ms)
+Completed 200 OK in 231ms (Views: 227.0ms | ActiveRecord: 1.6ms)
