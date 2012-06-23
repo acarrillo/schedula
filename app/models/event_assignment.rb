@@ -5,6 +5,9 @@ class EventAssignment < ActiveRecord::Base
   fields do
     timestamps
   end
+  
+  belongs_to :event
+  belongs_to :timeline
 
   # --- Permissions --- #
 

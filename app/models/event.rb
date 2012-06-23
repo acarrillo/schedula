@@ -9,6 +9,9 @@ class Event < ActiveRecord::Base
     finish      :datetime
     timestamps
   end
+  
+  has_many :timelines, :through => :event_assignments, :accessible => :true
+  has_many :event_assignments, :dependent => :destroy
 
   # --- Permissions --- #
 

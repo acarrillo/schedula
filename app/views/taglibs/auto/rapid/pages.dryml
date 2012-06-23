@@ -99,7 +99,6 @@
 
           <section param="content-body">
             <view:description param="description" />
-            <field-list fields="start, finish" param/>
           </section>
     </content:>
 
@@ -332,7 +331,7 @@
               </ht>
             </h2>
 
-            <record-flags fields="administrator" param/>
+            <record-flags fields="" param/>
 
             <a action="edit" if="&can_edit?" param="edit-link">
               <ht key="user.actions.edit" name="#{name(:no_wrapper => true)}">
@@ -342,7 +341,6 @@
           </header>
 
           <section param="content-body">
-            <field-list fields="email_address, state" param/>
           </section>
     </content:>
 
