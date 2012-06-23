@@ -101,15 +101,6 @@
           <section param="content-body">
             <view:description param="description" />
             <field-list fields="start, finish" param/>
-            <section param="collection-section">
-              <h3 param="collection-heading">
-                <ht key="timeline.collection.heading" count="&this.timelines.count" >
-                  <human-collection-name collection="timelines" your/>
-                </ht>
-              </h3>
-
-              <collection:timelines param/>
-            </section>
           </section>
     </content:>
 

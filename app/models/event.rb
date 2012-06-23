@@ -13,7 +13,7 @@ class Event < ActiveRecord::Base
   has_many :timelines, :through => :event_assignments, :accessible => :true
   has_many :event_assignments, :dependent => :destroy
   
-  children :timelines
+  
 
   # --- Permissions --- #
 

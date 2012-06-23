@@ -5,11 +5,6 @@
     <header: param>
       <h4 param="heading"><a><name/></a></h4>
     </header:>
-    <body: param>
-      <ht key="timeline.collection.count" count="&this.timelines.size">
-         <count:timelines param/>
-      </ht>
-    </body:>
   </card>
 </def>
 
