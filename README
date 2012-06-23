@@ -1,3 +1,10 @@
+To run:
+    $ rails server
+
+Then go to:
+    localhost:3000
+
+
 == Welcome to Rails
 
 Rails is a web-application framework that includes everything needed to create
