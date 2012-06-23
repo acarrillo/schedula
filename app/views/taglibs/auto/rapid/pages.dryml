@@ -324,7 +324,6 @@
       <section-group>
         <section param="main-content">
           <header param="content-header">
-            <a:events param="parent-link">&laquo; <ht key="timeline.actions.back_to_parent" parent="Event" name="&this">Back to <name/></ht></a:events>
             <h2 param="heading">
               <ht key="timeline.show.heading" name="#{name(:no_wrapper => true)}">
                 Timeline <name/>

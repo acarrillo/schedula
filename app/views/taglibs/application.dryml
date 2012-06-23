@@ -5,7 +5,6 @@
 
  
 <!--set-theme name="clean"/-->
-
 <def tag="magic-selective-collection">
 	<collection merge>
 		<item: param>
@@ -46,6 +45,16 @@
     </content:>
 
 	</old-index-page>
+</extend>
+
+<extend tag="show-page" for="User">
+	<old-show-page merge>
+		<heading:>
+			<name/>
+		</heading:>
+
+		<content-body: param><field-list fields=""/></content-body:>
+	</old-show-page>
 </extend>
 
 <extend tag="card" for="Timeline">
