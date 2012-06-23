@@ -30,6 +30,17 @@
   </card>
 </def>
 
+<def tag="card" for="TimelineFollowship">
+  <card class="timeline-followship" param="default" merge>
+    <header: param>
+      <h4 param="heading"><name/></h4>
+      <div param="actions">
+        <delete-button label="X" param/>
+      </div>
+    </header:>
+  </card>
+</def>
+
 <def tag="card" for="User">
   <card class="user" param="default" merge>
     <header: param>

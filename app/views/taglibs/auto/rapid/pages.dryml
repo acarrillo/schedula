@@ -6,7 +6,6 @@
   <navigation class="main-nav" merge-attrs param="default">
     <nav-item href="#{base_url}/">Home</nav-item>
     <nav-item with="&Event"><ht key="event.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
-    <nav-item with="&Timeline"><ht key="timeline.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
   </navigation>
 </def>
 
@@ -135,6 +134,124 @@
 
 
 
+<!-- ====== TimelineFollowship Pages ====== -->
+
+<def tag="index-page" for="TimelineFollowship">
+  <page merge title="#{ht 'timeline_followship.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page timeline-followship" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="timeline_followship.index.heading">
+            <model-name-human model="&model"/>
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="timeline_followship.collection.count" count="&collection_count">
+            <count summary/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+        <div param="new-form">
+          <h3 param="new-form-heading">
+            <ht key="timeline_followship.form.new.heading">New Timeline followship</ht>
+          </h3>
+          <form with="&@invalid_record || new_for_current_user(TimelineFollowship)" param/>
+        </div>
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="TimelineFollowship">
+  <page merge title="#{ht 'timeline_followship.new.title', :default=>[' New Timeline followship'] }">
+    <body: class="new-page timeline-followship" param/>
+
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="timeline_followship.new.heading">
+            New Timeline followship
+          </ht>
+        </h2>
+      </section>
+
+      <section param="content-body">
+        <form param>
+          <submit: label="#{ht 'timeline_followship.actions.create', :default=>['Create Timeline followship']}"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="TimelineFollowship">
+  <page merge title="#{ht 'timeline_followship.show.title', :default=>['Timeline followship'], :name => name(:no_wrapper => true) }">
+
+    <body: class="show-page timeline-followship" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading">
+              <ht key="timeline_followship.show.heading" name="#{name(:no_wrapper => true)}">
+                Timeline followship <name/>
+              </ht>
+            </h2>
+
+            <record-flags fields="" param/>
+          </header>
+
+          <section param="content-body">
+            <field-list fields="timeline, user" param/>
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="edit-page" for="TimelineFollowship">
+  <page merge title="#{ht 'timeline_followship.edit.title', :default=>['Edit Timeline followship'], :name => name(:no_wrapper => true) }">
+
+    <body: class="edit-page timeline-followship" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">
+          <ht key="timeline_followship.edit.heading" name="#{name(:no_wrapper => true)}">
+            Edit Timeline followship
+          </ht>
+        </h2>
+        <delete-button label="#{ht 'timeline_followship.actions.delete', :default=>['Remove This Timeline followship']}" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+
+
+
+
 <!-- ====== Timeline Pages ====== -->
 
 <def tag="index-page" for="Timeline">
@@ -157,9 +274,6 @@
       </header>
 
       <section param="content-body">
-        <a action="new" to="&model" param="new-link">
-          <ht key="timeline.actions.new">New Timeline</ht>
-        </a>
 
         <page-nav param="top-page-nav"/>
 
@@ -203,7 +317,10 @@
     <body: class="show-page timeline" param/>
 
     <content: param>
+      <section-group>
+        <section param="main-content">
           <header param="content-header">
+            <a:events param="parent-link">&laquo; <ht key="timeline.actions.back_to_parent" parent="Event" name="&this">Back to <name/></ht></a:events>
             <h2 param="heading">
               <ht key="timeline.show.heading" name="#{name(:no_wrapper => true)}">
                 Timeline <name/>
@@ -232,6 +349,19 @@
               <collection:events param/>
             </section>
           </section>
+        </section>
+
+        <aside param>
+          <section param="followships-collection-section">
+            <h3 param="followships-collection-heading">
+              <ht key="timeline_followship.collection.heading" count="&this.followships.count" >
+                <human-collection-name collection="followships" your/>
+              </ht>
+            </h3>
+            <collection:followships  param="followships-collection"/>
+          </section>
+        </aside>
+      </section-group>
     </content:>
 
   </page>
@@ -258,6 +388,38 @@
       </section>
     </content:>
 
+  </page>
+</def>
+
+
+
+<def tag="new-for-owner-page" polymorphic/>
+<def tag="new-for-owner-page" for="Timeline">
+  <page merge title="#{ht 'timeline.new_for_owner.title', :default=>['New Timeline for']} #{name :with => @owner}">
+    <body: class="new-for-owner-page  timeline" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="timeline.new_for_owner.heading">
+            New Timeline
+          </ht>
+        </h2>
+        <h3 param="subheading">
+          <ht key="timeline.new_for_owner.subheading">
+            For:
+          </ht>
+          <a with="&@owner"/>
+        </h3>
+      </header>
+
+      <section param="content-body">
+        <form owner="owner" method="post" param>
+          <field-list: skip="owner"/>
+          <submit: label="#{ht 'timeline.actions.create', :default=>['Create Timeline']}"/>
+        </form>
+      </section>
+    </content:>
   </page>
 </def>
 

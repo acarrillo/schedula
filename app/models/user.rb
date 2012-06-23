@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   end
 
   has_many :timelines, :class_name => "Timeline", :foreign_key => "owner_id"
+  has_many :timeline_followships, :dependent => :destroy
+  has_many :joined_timelines, :through => :timeline_followships, :source => :project
 
   # This gives admin rights and an :active state to the first sign-up.
   # Just remove it if you don't want that
