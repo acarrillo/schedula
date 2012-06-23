@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120623204537) do
+ActiveRecord::Schema.define(:version => 20120623221035) do
 
   create_table "event_assignments", :force => true do |t|
     t.datetime "created_at"
@@ -30,6 +30,16 @@ ActiveRecord::Schema.define(:version => 20120623204537) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "timeline_followships", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "timeline_id"
+    t.integer  "user_id"
+  end
+
+  add_index "timeline_followships", ["timeline_id"], :name => "index_timeline_followships_on_timeline_id"
+  add_index "timeline_followships", ["user_id"], :name => "index_timeline_followships_on_user_id"
 
   create_table "timelines", :force => true do |t|
     t.string   "name"

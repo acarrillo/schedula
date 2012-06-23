@@ -5,15 +5,8 @@
 HoboApp::Application.routes.draw do
 
 
-  # Resource routes for controller "timelines"
-  get 'timelines(.:format)' => 'timelines#index', :as => 'timelines'
-  get 'timelines/new(.:format)', :as => 'new_timeline'
-  get 'timelines/:id/edit(.:format)' => 'timelines#edit', :as => 'edit_timeline'
-  get 'timelines/:id(.:format)' => 'timelines#show', :as => 'timeline', :constraints => { :id => %r([^/.?]+) }
-  post 'timelines(.:format)' => 'timelines#create', :as => 'create_timeline'
-  put 'timelines/:id(.:format)' => 'timelines#update', :as => 'update_timeline', :constraints => { :id => %r([^/.?]+) }
-  delete 'timelines/:id(.:format)' => 'timelines#destroy', :as => 'destroy_timeline', :constraints => { :id => %r([^/.?]+) }
-
+  # Index action routes for controller "users"
+  get 'users/complete_name(.:format)', :as => 'complete_name_users'
 
   # Lifecycle routes for controller "users"
   post 'users/signup(.:format)' => 'users#do_signup', :as => 'do_user_signup'
@@ -37,6 +30,22 @@ HoboApp::Application.routes.draw do
   match 'login(.:format)' => 'users#login', :as => 'user_login'
   get 'logout(.:format)' => 'users#logout', :as => 'user_logout'
   match 'forgot_password(.:format)' => 'users#forgot_password', :as => 'user_forgot_password'
+
+
+  # Resource routes for controller "timeline_followships"
+  post 'timeline_followships(.:format)' => 'timeline_followships#create', :as => 'create_timeline_followship'
+  put 'timeline_followships/:id(.:format)' => 'timeline_followships#update', :as => 'update_timeline_followship', :constraints => { :id => %r([^/.?]+) }
+  delete 'timeline_followships/:id(.:format)' => 'timeline_followships#destroy', :as => 'destroy_timeline_followship', :constraints => { :id => %r([^/.?]+) }
+
+
+  # Resource routes for controller "timelines"
+  get 'timelines(.:format)' => 'timelines#index', :as => 'timelines'
+  get 'timelines/new(.:format)', :as => 'new_timeline'
+  get 'timelines/:id/edit(.:format)' => 'timelines#edit', :as => 'edit_timeline'
+  get 'timelines/:id(.:format)' => 'timelines#show', :as => 'timeline', :constraints => { :id => %r([^/.?]+) }
+  post 'timelines(.:format)' => 'timelines#create', :as => 'create_timeline'
+  put 'timelines/:id(.:format)' => 'timelines#update', :as => 'update_timeline', :constraints => { :id => %r([^/.?]+) }
+  delete 'timelines/:id(.:format)' => 'timelines#destroy', :as => 'destroy_timeline', :constraints => { :id => %r([^/.?]+) }
 
 
   # Resource routes for controller "events"

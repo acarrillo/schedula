@@ -11,7 +11,10 @@ class Timeline < ActiveRecord::Base
   has_many :events, :through => :event_assignments, :accessible => :true
   has_many :event_assignments, :dependent => :destroy
   
-  children :events
+  children :events, :followships
+  
+  has_many :followships, :class_name => "TimelineFollowship", :dependent => :destroy
+  has_many :followers, :through => :followships, :source => :user
 
   belongs_to :owner, :class_name => "User", :creator => true
 
