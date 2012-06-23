@@ -27,6 +27,11 @@
     <header: param>
       <h4 param="heading"><name/></h4>
     </header:>
+    <body: param>
+      <ht key="event.collection.count" count="&this.events.size">
+         <count:events param/>
+      </ht>
+    </body:>
   </card>
 </def>
 
