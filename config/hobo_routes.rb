@@ -5,6 +5,9 @@
 HoboApp::Application.routes.draw do
 
 
+  # Index action routes for controller "users"
+  get 'users/complete_name(.:format)', :as => 'complete_name_users'
+
   # Lifecycle routes for controller "users"
   post 'users/signup(.:format)' => 'users#do_signup', :as => 'do_user_signup'
   get 'users/signup(.:format)' => 'users#signup', :as => 'user_signup'
