@@ -82,6 +82,7 @@
 
     <content: param>
           <header param="content-header">
+            <a:timelines param="parent-link">&laquo; <ht key="event.actions.back_to_parent" parent="Timeline" name="&this">Back to <name/></ht></a:timelines>
             <h2 param="heading">
               <ht key="event.show.heading" name="#{name(:no_wrapper => true)}">
                 Event <name/>
@@ -221,6 +222,15 @@
           </header>
 
           <section param="content-body">
+            <section param="collection-section">
+              <h3 param="collection-heading">
+                <ht key="event.collection.heading" count="&this.events.count" >
+                  <human-collection-name collection="events" your/>
+                </ht>
+              </h3>
+
+              <collection:events param/>
+            </section>
           </section>
     </content:>
 

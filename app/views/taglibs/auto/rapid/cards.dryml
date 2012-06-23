@@ -23,6 +23,9 @@
     </header:>
     <body: param>
       <a:owner param="creator-link"/>
+      <ht key="event.collection.count" count="&this.events.size">
+         <count:events param/>
+      </ht>
     </body:>
   </card>
 </def>

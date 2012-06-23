@@ -13,3 +13,16 @@
 		</body:>
 	</old-card>
 </extend>
+ 
+ <!--set-theme name="clean"/-->
+
+<extend tag="card" for="Event">
+  <old-card merge>
+    <append-body:>
+	  <div class="time">
+	    Start time:  <span class="start time"><view:start/></span> <br/>
+	    End finish:  <span class="start time"><view:finish/></span>
+	  </div>
+    </append-body:>
+  </old-card>
+</extend>
