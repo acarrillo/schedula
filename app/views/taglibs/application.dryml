@@ -3,6 +3,51 @@
 <include src="taglibs/auto/rapid/pages"/>
 <include src="taglibs/auto/rapid/forms"/>
 
+ 
+<!--set-theme name="clean"/-->
+
+<def tag="magic-selective-collection">
+	<collection merge>
+		<item: param>
+<!--			<repeat:events with="&current_user == this.owner.id" join=", "><a/></repeat> -->
+			<do param="default"><card param/></do>
+		</item:>
+	</collection>
+</def>
+
+<extend tag="index-page" for="Timeline">
+	<old-index-page merge>
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="timeline.index.heading">
+            <model-name-human model="&model"/>
+          </ht>
+        </h2>
+
+        <p param="count" if>
+          <ht key="timeline.collection.count" count="&collection_count">
+            <count summary/>
+          </ht>
+        </p>
+      </header>
+
+      <section param="content-body">
+        <a action="new" to="&model" param="new-link">
+          <ht key="timeline.actions.new">New Timeline</ht>
+        </a>
+
+        <page-nav param="top-page-nav"/>
+	<magic-selective-collection param/>
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+
+	</old-index-page>
+</extend>
+
 <extend tag="card" for="Timeline">
 	<old-card merge>
 		<body: param>
@@ -13,8 +58,6 @@
 		</body:>
 	</old-card>
 </extend>
- 
- <!--set-theme name="clean"/-->
 
 <extend tag="card" for="Event">
   <old-card merge>
