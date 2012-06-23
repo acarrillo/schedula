@@ -39,14 +39,13 @@ HoboApp::Application.routes.draw do
 
 
   # Resource routes for controller "timelines"
+  get 'timelines(.:format)' => 'timelines#index', :as => 'timelines'
+  get 'timelines/new(.:format)', :as => 'new_timeline'
   get 'timelines/:id/edit(.:format)' => 'timelines#edit', :as => 'edit_timeline'
   get 'timelines/:id(.:format)' => 'timelines#show', :as => 'timeline', :constraints => { :id => %r([^/.?]+) }
+  post 'timelines(.:format)' => 'timelines#create', :as => 'create_timeline'
   put 'timelines/:id(.:format)' => 'timelines#update', :as => 'update_timeline', :constraints => { :id => %r([^/.?]+) }
   delete 'timelines/:id(.:format)' => 'timelines#destroy', :as => 'destroy_timeline', :constraints => { :id => %r([^/.?]+) }
-
-  # Owner routes for controller "timelines"
-  get 'users/:owner_id/timelines/new(.:format)' => 'timelines#new_for_owner', :as => 'new_timeline_for_owner'
-  post 'users/:owner_id/timelines(.:format)' => 'timelines#create_for_owner', :as => 'create_timeline_for_owner'
 
 
   # Resource routes for controller "events"

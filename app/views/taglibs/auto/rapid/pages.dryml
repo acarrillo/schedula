@@ -6,6 +6,7 @@
   <navigation class="main-nav" merge-attrs param="default">
     <nav-item href="#{base_url}/">Home</nav-item>
     <nav-item with="&Event"><ht key="event.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&Timeline"><ht key="timeline.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
   </navigation>
 </def>
 
@@ -274,6 +275,9 @@
       </header>
 
       <section param="content-body">
+        <a action="new" to="&model" param="new-link">
+          <ht key="timeline.actions.new">New Timeline</ht>
+        </a>
 
         <page-nav param="top-page-nav"/>
 
@@ -388,38 +392,6 @@
       </section>
     </content:>
 
-  </page>
-</def>
-
-
-
-<def tag="new-for-owner-page" polymorphic/>
-<def tag="new-for-owner-page" for="Timeline">
-  <page merge title="#{ht 'timeline.new_for_owner.title', :default=>['New Timeline for']} #{name :with => @owner}">
-    <body: class="new-for-owner-page  timeline" param/>
-
-    <content: param>
-      <header param="content-header">
-        <h2 param="heading">
-          <ht key="timeline.new_for_owner.heading">
-            New Timeline
-          </ht>
-        </h2>
-        <h3 param="subheading">
-          <ht key="timeline.new_for_owner.subheading">
-            For:
-          </ht>
-          <a with="&@owner"/>
-        </h3>
-      </header>
-
-      <section param="content-body">
-        <form owner="owner" method="post" param>
-          <field-list: skip="owner"/>
-          <submit: label="#{ht 'timeline.actions.create', :default=>['Create Timeline']}"/>
-        </form>
-      </section>
-    </content:>
   </page>
 </def>
 
