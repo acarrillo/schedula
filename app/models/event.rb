@@ -10,15 +10,16 @@ class Event < ActiveRecord::Base
     timestamps
   end
   
-  has_many :timelines, :through => :event_assignments, :accessible => :true
   has_many :event_assignments, :dependent => :destroy
-  
+  has_many :timelines, :through => :event_assignments, :accessible => :true
+  view_hints.parent :timeline
   
 
   # --- Permissions --- #
 
   def create_permitted?
-    acting_user.signed_up?
+    #acting_user.signed_up?
+    true
   end
 
   def update_permitted?

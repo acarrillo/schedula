@@ -65,6 +65,19 @@
 		<content-body: param><field-list fields=""/></content-body:>
 	</old-show-page>
 </extend>
+<!--if="&can_create?(@timeline.events)" -->
+<extend tag="show-page" for="Timeline">
+	<old-show-page merge>
+		<append-collection-section:>
+			<a:events action="new" param="new-link">
+			<ht key="event.actions.new" count="1">
+			New Event
+			</ht>
+			<!--</a:events><else><%=can_create?(@timeline.events)%></else>-->
+			</a:events>
+		</append-collection-section:>
+	</old-show-page>
+</extend>
 
 <extend tag="card" for="Event">
   <old-card merge>
