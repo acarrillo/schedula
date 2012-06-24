@@ -6,16 +6,17 @@ class TimelinesController < ApplicationController
   
   show_action :json
   def json
-    return json_from_id(:id)
+    @s = TimelinesController.json_from_id(params[:id])
+    return @s
   end
   
-  def json_from_id(id)
-    @get = params[id]
-    @timeline = Timeline.find(params[id])
+  def self.json_from_id(id)
+    @get = id
+    @timeline = Timeline.find(id)
     @name = @timeline.name
     @events = @timeline.events
     
-    @s = "{'id' : " + @get + ", 'name' : '" + @name + "', 'events' : [ "
+    @s = "{'id' : " + @get.to_s + ", 'name' : '" + @name + "', 'events' : [ "
     
     for @item in @events
        @s += "{'id' : " + @item.id.to_s + ", 'name' : '" + @item.name + "', 'description' : '" + @item.description + "'}, "
