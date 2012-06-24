@@ -49,7 +49,6 @@ HoboApp::Application.routes.draw do
 
 
   # Resource routes for controller "events"
-  get 'events(.:format)' => 'events#index', :as => 'events'
   get 'events/new(.:format)', :as => 'new_event'
   get 'events/:id/edit(.:format)' => 'events#edit', :as => 'edit_event'
   get 'events/:id(.:format)' => 'events#show', :as => 'event', :constraints => { :id => %r([^/.?]+) }

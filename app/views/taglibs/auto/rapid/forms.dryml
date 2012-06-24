@@ -27,7 +27,7 @@
 <def tag="form" for="Timeline">
   <form merge param="default">
     <error-messages param/>
-    <field-list fields="name, events, owner" param/>
+    <field-list fields="name, events, followships, owner" param/>
     <div param="actions">
       <submit label="#{ht 'timeline.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
     </div>

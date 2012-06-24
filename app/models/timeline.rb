@@ -13,7 +13,7 @@ class Timeline < ActiveRecord::Base
   
   children :events, :followships
   
-  has_many :followships, :class_name => "TimelineFollowship", :dependent => :destroy
+  has_many :followships, :class_name => "TimelineFollowship", :dependent => :destroy, :accessible => true
   has_many :followers, :through => :followships, :source => :user
 
   belongs_to :owner, :class_name => "User", :creator => true
