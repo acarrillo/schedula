@@ -18,11 +18,11 @@ class Event < ActiveRecord::Base
   # --- Permissions --- #
 
   def create_permitted?
-    acting_user.administrator?
+    acting_user.signed_up?
   end
 
   def update_permitted?
-    acting_user.administrator?
+    acting_user.signed_up?
   end
 
   def destroy_permitted?
