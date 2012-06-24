@@ -10,8 +10,9 @@ class Event < ActiveRecord::Base
     timestamps
   end
   
-  has_many :timelines, :through => :event_assignments, :accessible => :true
   has_many :event_assignments, :dependent => :destroy
+  has_many :timelines, :through => :event_assignments, :accessible => :true
+  children :timelines
   
   
 

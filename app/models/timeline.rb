@@ -8,8 +8,8 @@ class Timeline < ActiveRecord::Base
   end
   
   
-  has_many :events, :through => :event_assignments, :accessible => :true
   has_many :event_assignments, :dependent => :destroy
+  has_many :events, :through => :event_assignments, :accessible => :true
   
   children :events, :followships
   
