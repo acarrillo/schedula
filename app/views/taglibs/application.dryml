@@ -6,10 +6,10 @@
 <def tag="card" for="Timeline">
   <card class="timeline" param="default" merge>
     <header: param>
-      <h4 param="heading"><a><name/></a></h4>
+      <h4 param="heading"><a:owner param="creator-link"/> | <a><name/></a></h4>
     </header:>
     <body: param>
-      Owner: <a:owner param="creator-link"/>
+<!--      <if test="&not this.owner_is? current_user"> <a:owner param="creator-link"/></if> -->
     </body:>
   </card>
 </def>
