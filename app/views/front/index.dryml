@@ -8,6 +8,12 @@
     </header>
 <div>
 <h3 style="color:red">INSERT MRUDOY'S TIMELINE SYSTEM HERE</h3>
+
+<pre>
+{'following' :  [   <repeat with="&@current_user.timelines.group_by(&:events)"><json-timeline-collection/>, </repeat>  ],
+ 'owns': [  <repeat with="&@current_user.joined_timelines.group_by(&:events)"><json-timeline-collection/>, </repeat>  ] }
+</pre>
+
 </div>
 
     <section class="content-body">

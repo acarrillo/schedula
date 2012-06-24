@@ -3,13 +3,44 @@
 <include src="taglibs/auto/rapid/pages"/>
 <include src="taglibs/auto/rapid/forms"/>
 
+<def tag="view"><%= this %></def>
+
+<!--def tag="json-event">
+  <view:name/>
+</def>
+
+<def tag="json-event-collection">
+  <ul class='collection #{collection_name :dasherize => true}' merge-attrs unless='empty?'>
+    <li class='#{scope.even_odd} #{model_id_class}' param='item' repeat='&select_viewable'>
+      <do param='default'><json-event param/></do>
+    </li>
+  </ul>
+  <empty-collection-message param='empty-message'/>
+</def-->
+
+<def tag='json-timeline-collection'>
+  <ul class='collection #{collection_name :dasherize => true}' merge-attrs unless='empty?'>
+    <li class='#{scope.even_odd} #{model_id_class}' param='item' repeat='&select_viewable'>
+      <do param='default'><json-timeline param/></do>
+    </li>
+  </ul>
+  <empty-collection-message param='empty-message'/>
+</def>
+
+<def tag="json-timeline">{
+   'id': <view:id/>,
+   'name': <view:name/>,
+   'events':
+     [  <repeat:events>{ 'id': '<view:id/>', 'name': '<view:name/>',  'start': '<view:start/>', 'end': '<view:finish/>', 'description': '<view:description/>'  },
+       </repeat>  ]
+  }</def>
+
 <def tag="card" for="Timeline">
   <card class="timeline" param="default" merge>
     <header: param>
       <h4 param="heading"><a:owner param="creator-link"/> | <a><name/></a></h4>
     </header:>
     <body: param>
-<!--      <if test="&not this.owner_is? current_user"> <a:owner param="creator-link"/></if> -->
     </body:>
   </card>
 </def>

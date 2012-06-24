@@ -5,6 +5,14 @@
 HoboApp::Application.routes.draw do
 
 
+  # Resource routes for controller "events"
+  get 'events/new(.:format)', :as => 'new_event'
+  get 'events/:id/edit(.:format)' => 'events#edit', :as => 'edit_event'
+  get 'events/:id(.:format)' => 'events#show', :as => 'event', :constraints => { :id => %r([^/.?]+) }
+  post 'events(.:format)' => 'events#create', :as => 'create_event'
+  put 'events/:id(.:format)' => 'events#update', :as => 'update_event', :constraints => { :id => %r([^/.?]+) }
+  delete 'events/:id(.:format)' => 'events#destroy', :as => 'destroy_event', :constraints => { :id => %r([^/.?]+) }
+
   # Resource routes for controller "timelines"
   get 'timelines(.:format)' => 'timelines#index', :as => 'timelines'
   get 'timelines/new(.:format)', :as => 'new_timeline'
@@ -13,6 +21,12 @@ HoboApp::Application.routes.draw do
   post 'timelines(.:format)' => 'timelines#create', :as => 'create_timeline'
   put 'timelines/:id(.:format)' => 'timelines#update', :as => 'update_timeline', :constraints => { :id => %r([^/.?]+) }
   delete 'timelines/:id(.:format)' => 'timelines#destroy', :as => 'destroy_timeline', :constraints => { :id => %r([^/.?]+) }
+
+
+  # Resource routes for controller "timeline_followships"
+  post 'timeline_followships(.:format)' => 'timeline_followships#create', :as => 'create_timeline_followship'
+  put 'timeline_followships/:id(.:format)' => 'timeline_followships#update', :as => 'update_timeline_followship', :constraints => { :id => %r([^/.?]+) }
+  delete 'timeline_followships/:id(.:format)' => 'timeline_followships#destroy', :as => 'destroy_timeline_followship', :constraints => { :id => %r([^/.?]+) }
 
 
   # Index action routes for controller "users"
@@ -41,6 +55,7 @@ HoboApp::Application.routes.draw do
   get 'logout(.:format)' => 'users#logout', :as => 'user_logout'
   match 'forgot_password(.:format)' => 'users#forgot_password', :as => 'user_forgot_password'
 
+<<<<<<< HEAD
 
   # Resource routes for controller "timeline_followships"
   post 'timeline_followships(.:format)' => 'timeline_followships#create', :as => 'create_timeline_followship'
@@ -60,6 +75,8 @@ HoboApp::Application.routes.draw do
   get 'timelines/:timeline_id/events/new(.:format)' => 'events#new_for_timeline', :as => 'new_event_for_timeline'
   post 'timelines/:timeline_id/events(.:format)' => 'events#create_for_timeline', :as => 'create_event_for_timeline'
 
+=======
+>>>>>>> master
   namespace :admin do
 
 
