@@ -1,0 +1,22 @@
+<show-page>
+  <collection: replace>
+  <table-plus:events fields="this, start">
+    <empty-message:>No events match your criteria</empty-message:>
+  </table-plus>
+  </collection:>
+</show-page>
+
+<!--show-page>
+
+  <aside:>
+  <form:followships.new update="followers" reset-form refocus-form>
+    <input type="hidden" name="timeline_followship[user]" value="&current_user" />
+    <input type="submit" value="Follow" style="position: relative; left: -690px; top: 80px" />
+  </form>
+    <h2>Timeline followers</h2>
+    <collection:followships part="followers">
+      <card><heading:><a:user/></heading:></card>
+    </collection>
+  </aside:>
+
+</show-page-->
