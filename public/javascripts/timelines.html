@@ -63,7 +63,7 @@
 						{
 							startTime = parseInt($(this).attr("startTime"));
 							endTime = parseInt($(this).attr("endTime"));
-							$(this).css("width", ((endTime - startTime) * 1.0 / sppx) + "px");
+							$(this).css("width", ((endTime - startTime) * 1.0 / sppx - 5) + "px"); // minus 5 to correct for 5px left padding
 							$(this).css("left", (((startTime - pointTime) * 1.0 / sppx) + w / 2) + "px");
 						});
 					});
