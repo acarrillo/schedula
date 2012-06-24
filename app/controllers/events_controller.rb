@@ -4,6 +4,6 @@ class EventsController < ApplicationController
 
   auto_actions :all, :except => :index
   
-  #auto_actions_for :timeline, :new
+  #auto_actions_for :timeline, :create
 
 end

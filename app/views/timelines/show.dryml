@@ -1,4 +1,12 @@
 <show-page>
+  <collection: replace>
+  <table-plus:events fields="this, start">
+    <empty-message:>No events match your criteria</empty-message:>
+  </table-plus>
+  </collection:>
+</show-page>
+
+<!--show-page>
 
   <aside:>
   <form:followships.new update="followers" reset-form refocus-form>
@@ -11,4 +19,4 @@
     </collection>
   </aside:>
 
-</show-page>
+</show-page-->
