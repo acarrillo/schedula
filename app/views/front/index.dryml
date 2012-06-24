@@ -5,6 +5,9 @@
 <content:>
 <header class="content-header">
 <h1>Welcome to <app-name/></h1>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+<link type="text/css" href="stylesheets/test.css" rel="stylesheet" />
 </header>
 
 <section class="content-body">

@@ -1,10 +1,18 @@
 <!-- Global taglib - these tags are shared across all subsites -->
+<!--<include gem="hobo-jquery" /> -->
+<!--
+<extend tag="page">
+  <old-page merge>
+    <custom-scripts:>
+      <hjq-assets/>
+    </custom-scripts>
+  </old-page>
+</extend> -->
+<def tag="view"><%= this %></def>
+
 <include src="taglibs/auto/rapid/cards"/>
 <include src="taglibs/auto/rapid/pages"/>
 <include src="taglibs/auto/rapid/forms"/>
-
-<def tag="view"><%= this %></def>
-
 <!--def tag="json-event">
   <view:name/>
 </def>
@@ -118,4 +126,26 @@
       <b>End:</b>  <view:start param="finish" format="%b %d, %l:%M %PM" />
     </content-body:>
   </old-show-page>
+</extend>
+
+<extend tag="form" for="Event">
+	<old-form replace>
+		<field-list: fields="name, description, start, finish, timelines" />
+		<after-field-list:><%= hidden_field(:timeline, :id) %></after-field-list>
+		<actions:>
+			<submit label="#{ht 'event.actions.save', :default=>['Save']}" param/>
+			<or-cancel with="&@timeline" param="cancel"/>
+		</actions:>
+	</old-form>
+</extend>
+
+<extend tag="form" for="Timeline">
+	<old-form replace>
+		<field-list: fields="name, events, followships, owner"/>
+		<after-field-list:><%= hidden_field(:event, :id) %></after-field-list>
+		<actions:>
+			<submit label="#{ht 'timeline.actions.save', :default=>['Save']}" param/>
+			<or-cancel with="&@event" param="cancel"/>
+		</actions:>
+	</old-form>
 </extend>

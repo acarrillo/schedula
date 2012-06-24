@@ -100,6 +100,15 @@
           <section param="content-body">
             <view:description param="description" />
             <field-list fields="start, finish" param/>
+            <section param="collection-section">
+              <h3 param="collection-heading">
+                <ht key="timeline.collection.heading" count="&this.timelines.count" >
+                  <human-collection-name collection="timelines" your/>
+                </ht>
+              </h3>
+
+              <collection:timelines param/>
+            </section>
           </section>
     </content:>
 
@@ -127,6 +136,38 @@
       </section>
     </content:>
 
+  </page>
+</def>
+
+
+
+<def tag="new-for-timeline-page" polymorphic/>
+<def tag="new-for-timeline-page" for="Event">
+  <page merge title="#{ht 'event.new_for_owner.title', :default=>['New Event for']} #{name :with => @timeline}">
+    <body: class="new-for-owner-page  event" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="event.new_for_owner.heading">
+            New Event
+          </ht>
+        </h2>
+        <h3 param="subheading">
+          <ht key="event.new_for_owner.subheading">
+            For:
+          </ht>
+          <a with="&@timeline"/>
+        </h3>
+      </header>
+
+      <section param="content-body">
+        <form owner="timeline" method="post" param>
+          <field-list: skip="timeline"/>
+          <submit: label="#{ht 'event.actions.create', :default=>['Create Event']}"/>
+        </form>
+      </section>
+    </content:>
   </page>
 </def>
 
@@ -323,6 +364,7 @@
       <section-group>
         <section param="main-content">
           <header param="content-header">
+            <a:events param="parent-link">&laquo; <ht key="timeline.actions.back_to_parent" parent="Event" name="&this">Back to <name/></ht></a:events>
             <h2 param="heading">
               <ht key="timeline.show.heading" name="#{name(:no_wrapper => true)}">
                 Timeline <name/>
@@ -390,6 +432,38 @@
       </section>
     </content:>
 
+  </page>
+</def>
+
+
+
+<def tag="new-for-event-page" polymorphic/>
+<def tag="new-for-event-page" for="Timeline">
+  <page merge title="#{ht 'timeline.new_for_owner.title', :default=>['New Timeline for']} #{name :with => @event}">
+    <body: class="new-for-owner-page  timeline" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">
+          <ht key="timeline.new_for_owner.heading">
+            New Timeline
+          </ht>
+        </h2>
+        <h3 param="subheading">
+          <ht key="timeline.new_for_owner.subheading">
+            For:
+          </ht>
+          <a with="&@event"/>
+        </h3>
+      </header>
+
+      <section param="content-body">
+        <form owner="event" method="post" param>
+          <field-list: skip="event"/>
+          <submit: label="#{ht 'timeline.actions.create', :default=>['Create Timeline']}"/>
+        </form>
+      </section>
+    </content:>
   </page>
 </def>
 

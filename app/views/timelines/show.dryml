@@ -4,6 +4,20 @@
     <empty-message:>No events match your criteria</empty-message:>
   </table-plus>
   </collection:>
+  <after-collection-section:> 
+
+      <a:events action="new" if="&can_create?(EventAssignment)"> 
+
+        <ht key="event.actions.new" count="1"> 
+
+          New Event 
+
+        </ht> 
+
+      </a:events> 
+
+  </after-collection-section:> 
+
 </show-page>
 
 <!--show-page>
