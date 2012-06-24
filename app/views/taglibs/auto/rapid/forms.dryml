@@ -3,7 +3,7 @@
 <def tag="form" for="Event">
   <form merge param="default">
     <error-messages param/>
-    <field-list fields="name, description, start, finish, timelines" param/>
+    <field-list fields="timelines" param/>
     <div param="actions">
       <submit label="#{ht 'event.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
     </div>
@@ -27,7 +27,7 @@
 <def tag="form" for="Timeline">
   <form merge param="default">
     <error-messages param/>
-    <field-list fields="name, events, followships, owner" param/>
+    <field-list fields="events, followships, owner" param/>
     <div param="actions">
       <submit label="#{ht 'timeline.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
     </div>
@@ -39,7 +39,7 @@
 <def tag="form" for="User">
   <form merge param="default">
     <error-messages param/>
-    <field-list fields="name, email_address, administrator, state" param/>
+    <field-list fields="" param/>
     <div param="actions">
       <submit label="#{ht 'user.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
     </div>

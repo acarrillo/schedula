@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120623221035) do
+ActiveRecord::Schema.define(:version => 20120624074411) do
 
   create_table "event_assignments", :force => true do |t|
     t.datetime "created_at"
