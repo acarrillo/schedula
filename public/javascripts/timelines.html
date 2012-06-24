@@ -70,13 +70,24 @@
 				});
 			}
 			
-			function addTimeline1()
+			function addTimeline1(i)
 			{
-				$("div.timelineholder1 > ul.sortable").prepend('<li><div class="timeline"></div></li>');
-				$($("div.timelineholder1 > ul.sortable").children().get(0)).find(".timeline").each(function()
-				{
-					
-				});
+				$.ajax({url: '/timelines/' + i + "/json",
+				data: '',
+ 				success: function(data)
+				{ 					
+					alert("hi"); 					
+					$("div.timelineholder1 > ul.sortable").prepend('<li><div class="timeline"></div></li>');
+ 					$($("div.timelineholder1 > ul.sortable").children().get(0)).find(".timeline").each(function()
+ 					{
+	 					
+		 			});
+ 				},
+                error: function(a, b, c) {
+	                alert("error: " + a + ", " + a.status + ", " + b + ", " + c);
+                }
+                });
+ 				alert("hello");
 			}
 			
 			function addTimeline2()
@@ -107,7 +118,7 @@
 					       .append('<div class="bglines rounded_left rounded_right"></div>')
 					       .append('<div class="timelineholder1"><ul class="sortable"><li><div class="timeline"></div></li><li><div class="timeline"></div></li></ul></div>')
 					       .append('<div class="timelineholder2"><ul class="sortable"><li><div class="timeline"></div></li><li><div class="timeline"><div class="activity" startTime=0 endTime=3600 style="top:10px; left:50px;width: 150px;" onclick="makeClickable()">Doing Stuff!!</div></div></li></ul></div>');
-					
+					addTimeline1(1);
 					$(".sortable").each(function()
 					{
 						$(this).sortable({forcePlaceholderSize: true, placeholder: 'ui-state-highlight'});
