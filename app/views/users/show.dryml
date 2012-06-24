@@ -4,6 +4,11 @@
     <repeat with="&@user.timelines.group_by(&:events)">
       <collection/>
     </repeat>
+    <br/>
+	<h3>Followed Timelines</h3>
+    <repeat with="&@user.joined_timelines.group_by(&:events)">
+      <collection/>
+    </repeat>
     <else>None</else>
   </content-body:>
 </show-page>
