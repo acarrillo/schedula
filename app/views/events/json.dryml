@@ -1,0 +1,3 @@
+<%=
+"{'id' : " + @get + ", 'name' : '" + @name + "', 'description' : '" + @description + "'}"
+%>
