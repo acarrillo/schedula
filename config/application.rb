@@ -10,6 +10,7 @@ module HoboApp
   class Application < Rails::Application
   
   config.hobo.dryml_only_templates = true
+  config.hobo.app_name = "Schedula"
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

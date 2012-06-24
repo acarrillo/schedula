@@ -15,16 +15,6 @@ HoboApp::Application.routes.draw do
   delete 'events/:id(.:format)' => 'events#destroy', :as => 'destroy_event', :constraints => { :id => %r([^/.?]+) }
 
 
-  # Resource routes for controller "timelines"
-  get 'timelines(.:format)' => 'timelines#index', :as => 'timelines'
-  get 'timelines/new(.:format)', :as => 'new_timeline'
-  get 'timelines/:id/edit(.:format)' => 'timelines#edit', :as => 'edit_timeline'
-  get 'timelines/:id(.:format)' => 'timelines#show', :as => 'timeline', :constraints => { :id => %r([^/.?]+) }
-  post 'timelines(.:format)' => 'timelines#create', :as => 'create_timeline'
-  put 'timelines/:id(.:format)' => 'timelines#update', :as => 'update_timeline', :constraints => { :id => %r([^/.?]+) }
-  delete 'timelines/:id(.:format)' => 'timelines#destroy', :as => 'destroy_timeline', :constraints => { :id => %r([^/.?]+) }
-
-
   # Index action routes for controller "users"
   get 'users/complete_name(.:format)', :as => 'complete_name_users'
 
@@ -56,6 +46,16 @@ HoboApp::Application.routes.draw do
   post 'timeline_followships(.:format)' => 'timeline_followships#create', :as => 'create_timeline_followship'
   put 'timeline_followships/:id(.:format)' => 'timeline_followships#update', :as => 'update_timeline_followship', :constraints => { :id => %r([^/.?]+) }
   delete 'timeline_followships/:id(.:format)' => 'timeline_followships#destroy', :as => 'destroy_timeline_followship', :constraints => { :id => %r([^/.?]+) }
+
+
+  # Resource routes for controller "timelines"
+  get 'timelines(.:format)' => 'timelines#index', :as => 'timelines'
+  get 'timelines/new(.:format)', :as => 'new_timeline'
+  get 'timelines/:id/edit(.:format)' => 'timelines#edit', :as => 'edit_timeline'
+  get 'timelines/:id(.:format)' => 'timelines#show', :as => 'timeline', :constraints => { :id => %r([^/.?]+) }
+  post 'timelines(.:format)' => 'timelines#create', :as => 'create_timeline'
+  put 'timelines/:id(.:format)' => 'timelines#update', :as => 'update_timeline', :constraints => { :id => %r([^/.?]+) }
+  delete 'timelines/:id(.:format)' => 'timelines#destroy', :as => 'destroy_timeline', :constraints => { :id => %r([^/.?]+) }
 
   namespace :admin do
 
