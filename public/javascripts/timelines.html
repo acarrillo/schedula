@@ -9,7 +9,7 @@
 	<body>
 		<meta charset="utf-8">
 		<div class="container rounded_left rounded_right" pointTime="0" dx="0" sppx="20"></div>
-		<a id = "clickme" style="display: none">click</a>
+		<a id = "clickme" style="display: none;">Add to my schedule</a>
 		<script>
 			function draw()
 			{
@@ -98,7 +98,7 @@
 			
 			function makeClickable()
 			{
-				$("#clickme").attr("style", "display: block;").bind("click", function()
+				$("#clickme").attr("style", "display: inline; background-color: red; padding: 2px").bind("click", function()
 				{
 					$($("div.timelineholder1 > ul.sortable > li > div.timeline").get(0)).append($($("div.activity").get(0)).clone());
 				});
