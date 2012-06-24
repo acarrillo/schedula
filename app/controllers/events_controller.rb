@@ -4,6 +4,14 @@ class EventsController < ApplicationController
 
   auto_actions :all, :except => :index
   
-  #auto_actions_for :timeline, :create
+  show_action :json
+  def json
+    print 'in json function'
+    print params[:id]
+    @get = params[:id]
+    @event = Event.find(params[:id])
+    @name = @event.name
+    @description = @event.description
+  end
 
 end

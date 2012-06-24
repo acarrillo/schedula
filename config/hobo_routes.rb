@@ -13,6 +13,9 @@ HoboApp::Application.routes.draw do
   put 'events/:id(.:format)' => 'events#update', :as => 'update_event', :constraints => { :id => %r([^/.?]+) }
   delete 'events/:id(.:format)' => 'events#destroy', :as => 'destroy_event', :constraints => { :id => %r([^/.?]+) }
 
+  # Show action routes for controller "events"
+  get 'events/:id/json(.:format)' => 'events#json', :as => 'event_json'
+
 
   # Resource routes for controller "timelines"
   get 'timelines(.:format)' => 'timelines#index', :as => 'timelines'

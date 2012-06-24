@@ -1,4 +1,4 @@
-<show-page>
+<!--show-page>
   <content-body:>
     <h3><Your/> Timelines</h3>
     <repeat with="&@user.timelines.group_by(&:events)">
@@ -11,4 +11,12 @@
     </repeat>
     <else>None</else>
   </content-body:>
+</show-page-->
+
+<show-page>
+<repeat:timelines>
+  <do part="timeline" id="comment-#{this_field}">
+    <form update="timeline-#{this_field}"/>
+  </do>
+</repeat>
 </show-page>
