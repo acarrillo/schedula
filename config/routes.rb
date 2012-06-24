@@ -2,6 +2,7 @@ HoboApp::Application.routes.draw do
   root :to => 'front#index'
 
   match 'search' => 'front#search', :as => 'site_search'
+  get 'script.js' => 'timelines#ship_javascript', :as => 'ship_javascript'
 
   get 'users/:user_id/unfollow_timeline/:timeline_id(.:format)' => 'users#unfollow_timeline', :as => 'user_unfollow_timeline'
   get 'users/:user_id/follow_timeline/:timeline_id(.:format)' => 'users#follow_timeline', :as => 'user_follow_timeline'

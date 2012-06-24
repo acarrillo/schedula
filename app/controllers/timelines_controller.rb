@@ -3,7 +3,6 @@ class TimelinesController < ApplicationController
   hobo_model_controller
 
   auto_actions :all
-  
   show_action :json
   def json
     @s = TimelinesController.json_from_id(params[:id])
@@ -26,5 +25,9 @@ class TimelinesController < ApplicationController
     
     return @s
   end
-  
+  def ship_javascript
+    @file = File.new("script.js", "r")
+    
+    return @file
+  end
 end

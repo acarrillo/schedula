@@ -1,22 +1,20 @@
 <page title="Home">
 
-  <body: class="front-page"/>
+<body: class="front-page"/>
 
-  <content:>
-    <header class="content-header">
-      <h1>Welcome to <app-name/></h1>
-    </header>
-<div>
-<h3 style="color:red">INSERT MRUDOY'S TIMELINE SYSTEM HERE</h3>
+<content:>
+<header class="content-header">
+<h1>Welcome to <app-name/></h1>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+<link type="text/css" href="test.css" rel="stylesheet" />
+</header>
 
-<pre>
-{'following' :  [   <repeat with="&@current_user.timelines.group_by(&:events)"><json-timeline-collection/>, </repeat>  ],
- 'owns': [  <repeat with="&@current_user.joined_timelines.group_by(&:events)"><json-timeline-collection/>, </repeat>  ] }
-</pre>
+<section class="content-body">
+<div class="container rounded_left rounded_right" pointTime="0" dx="0" sppx="30"></div> 
+<a id="clickme">click</a> 
+<script src="script.js" type="text/javascript"/> 
 
-</div>
-
-    <section class="content-body">
     </section>
   </content:>
 
