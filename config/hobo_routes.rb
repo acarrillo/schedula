@@ -4,6 +4,7 @@
 
 HoboApp::Application.routes.draw do
 
+
   # Resource routes for controller "timeline_followships"
   post 'timeline_followships(.:format)' => 'timeline_followships#create', :as => 'create_timeline_followship'
   put 'timeline_followships/:id(.:format)' => 'timeline_followships#update', :as => 'update_timeline_followship', :constraints => { :id => %r([^/.?]+) }
@@ -47,15 +48,6 @@ HoboApp::Application.routes.draw do
   match 'forgot_password(.:format)' => 'users#forgot_password', :as => 'user_forgot_password'
 
 
-<<<<<<< HEAD
-=======
-  # Resource routes for controller "timeline_followships"
-  post 'timeline_followships(.:format)' => 'timeline_followships#create', :as => 'create_timeline_followship'
-  put 'timeline_followships/:id(.:format)' => 'timeline_followships#update', :as => 'update_timeline_followship', :constraints => { :id => %r([^/.?]+) }
-  delete 'timeline_followships/:id(.:format)' => 'timeline_followships#destroy', :as => 'destroy_timeline_followship', :constraints => { :id => %r([^/.?]+) }
-
-
->>>>>>> be34dcad0d986c4dddaf303f4611a26d148e0c81
   # Resource routes for controller "events"
   get 'events/new(.:format)', :as => 'new_event'
   get 'events/:id/edit(.:format)' => 'events#edit', :as => 'edit_event'
