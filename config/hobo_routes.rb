@@ -5,6 +5,39 @@
 HoboApp::Application.routes.draw do
 
 
+  # Resource routes for controller "timelines"
+  get 'timelines(.:format)' => 'timelines#index', :as => 'timelines'
+  get 'timelines/new(.:format)', :as => 'new_timeline'
+  get 'timelines/:id/edit(.:format)' => 'timelines#edit', :as => 'edit_timeline'
+  get 'timelines/:id(.:format)' => 'timelines#show', :as => 'timeline', :constraints => { :id => %r([^/.?]+) }
+  post 'timelines(.:format)' => 'timelines#create', :as => 'create_timeline'
+  put 'timelines/:id(.:format)' => 'timelines#update', :as => 'update_timeline', :constraints => { :id => %r([^/.?]+) }
+  delete 'timelines/:id(.:format)' => 'timelines#destroy', :as => 'destroy_timeline', :constraints => { :id => %r([^/.?]+) }
+
+  # Owner routes for controller "timelines"
+  post 'events/:event_id/timelines(.:format)' => 'timelines#create_for_event', :as => 'create_timeline_for_event'
+  get 'events/:event_id/timelines/new(.:format)' => 'timelines#new_for_event', :as => 'new_timeline_for_event'
+
+  # Show action routes for controller "timelines"
+  get 'timelines/:id/json(.:format)' => 'timelines#json', :as => 'timeline_json'
+
+
+  # Resource routes for controller "events"
+  get 'events/new(.:format)', :as => 'new_event'
+  get 'events/:id/edit(.:format)' => 'events#edit', :as => 'edit_event'
+  get 'events/:id(.:format)' => 'events#show', :as => 'event', :constraints => { :id => %r([^/.?]+) }
+  post 'events(.:format)' => 'events#create', :as => 'create_event'
+  put 'events/:id(.:format)' => 'events#update', :as => 'update_event', :constraints => { :id => %r([^/.?]+) }
+  delete 'events/:id(.:format)' => 'events#destroy', :as => 'destroy_event', :constraints => { :id => %r([^/.?]+) }
+
+  # Owner routes for controller "events"
+  post 'timelines/:timeline_id/events(.:format)' => 'events#create_for_timeline', :as => 'create_event_for_timeline'
+  get 'timelines/:timeline_id/events/new(.:format)' => 'events#new_for_timeline', :as => 'new_event_for_timeline'
+
+  # Show action routes for controller "events"
+  get 'events/:id/json(.:format)' => 'events#json', :as => 'event_json'
+
+
   # Index action routes for controller "users"
   get 'users/complete_name(.:format)', :as => 'complete_name_users'
 
@@ -33,39 +66,6 @@ HoboApp::Application.routes.draw do
   match 'login(.:format)' => 'users#login', :as => 'user_login'
   get 'logout(.:format)' => 'users#logout', :as => 'user_logout'
   match 'forgot_password(.:format)' => 'users#forgot_password', :as => 'user_forgot_password'
-
-
-  # Resource routes for controller "events"
-  get 'events/new(.:format)', :as => 'new_event'
-  get 'events/:id/edit(.:format)' => 'events#edit', :as => 'edit_event'
-  get 'events/:id(.:format)' => 'events#show', :as => 'event', :constraints => { :id => %r([^/.?]+) }
-  post 'events(.:format)' => 'events#create', :as => 'create_event'
-  put 'events/:id(.:format)' => 'events#update', :as => 'update_event', :constraints => { :id => %r([^/.?]+) }
-  delete 'events/:id(.:format)' => 'events#destroy', :as => 'destroy_event', :constraints => { :id => %r([^/.?]+) }
-
-  # Owner routes for controller "events"
-  post 'timelines/:timeline_id/events(.:format)' => 'events#create_for_timeline', :as => 'create_event_for_timeline'
-  get 'timelines/:timeline_id/events/new(.:format)' => 'events#new_for_timeline', :as => 'new_event_for_timeline'
-
-  # Show action routes for controller "events"
-  get 'events/:id/json(.:format)' => 'events#json', :as => 'event_json'
-
-
-  # Resource routes for controller "timelines"
-  get 'timelines(.:format)' => 'timelines#index', :as => 'timelines'
-  get 'timelines/new(.:format)', :as => 'new_timeline'
-  get 'timelines/:id/edit(.:format)' => 'timelines#edit', :as => 'edit_timeline'
-  get 'timelines/:id(.:format)' => 'timelines#show', :as => 'timeline', :constraints => { :id => %r([^/.?]+) }
-  post 'timelines(.:format)' => 'timelines#create', :as => 'create_timeline'
-  put 'timelines/:id(.:format)' => 'timelines#update', :as => 'update_timeline', :constraints => { :id => %r([^/.?]+) }
-  delete 'timelines/:id(.:format)' => 'timelines#destroy', :as => 'destroy_timeline', :constraints => { :id => %r([^/.?]+) }
-
-  # Owner routes for controller "timelines"
-  post 'events/:event_id/timelines(.:format)' => 'timelines#create_for_event', :as => 'create_timeline_for_event'
-  get 'events/:event_id/timelines/new(.:format)' => 'timelines#new_for_event', :as => 'new_timeline_for_event'
-
-  # Show action routes for controller "timelines"
-  get 'timelines/:id/json(.:format)' => 'timelines#json', :as => 'timeline_json'
 
 
   # Resource routes for controller "timeline_followships"
