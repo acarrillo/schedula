@@ -1,25 +1,14 @@
 <show-page>
-  <!--collection: replace>
-  <table-plus with="&@stories" fields="this, tasks.count, status">
-    <prepend-header:>
-      <div class="filter">
-        Display by status: <filter-menu param-name="status" options="&StoryStatus.all"/>
-      </div>
-    </prepend-header:>
-    <empty-message:>No stories match your criteria</empty-message:>
-  </table-plus>
-  </collection:-->
 
   <aside:>
+  <form:followships.new update="followers" reset-form refocus-form>
+    <input type="hidden" name="timeline_followship[user]" value="&current_user" />
+    <input type="submit" value="Follow" style="position: relative; left: -690px; top: 80px" />
+  </form>
     <h2>Timeline followers</h2>
-    <collection:followers part="followers"/>
-
-    <!--form:followships.new update="followers" reset-form refocus-form>
-      <div>
-        Add a member:
-        <name-one:user/>
-      </div>
-    </form-->
+    <collection:followships part="followers">
+      <card><heading:><a:user/></heading:></card>
+    </collection>
   </aside:>
 
 </show-page>
