@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/bryanlarsen/hobo-jquery.git
+  revision: 3578efd55304328249a7df2a8167bc731dc0e608
+  branch: rails3
+  specs:
+    hobo-jquery (1.3.0pre1)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -88,5 +95,6 @@ PLATFORMS
 
 DEPENDENCIES
   hobo (= 1.3.0)
+  hobo-jquery!
   rails (= 3.0.15)
   sqlite3

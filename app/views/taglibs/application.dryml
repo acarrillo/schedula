@@ -1,10 +1,18 @@
 <!-- Global taglib - these tags are shared across all subsites -->
+<!--<include gem="hobo-jquery" /> -->
+<!--
+<extend tag="page">
+  <old-page merge>
+    <custom-scripts:>
+      <hjq-assets/>
+    </custom-scripts>
+  </old-page>
+</extend> -->
+<def tag="view"><%= this %></def>
+
 <include src="taglibs/auto/rapid/cards"/>
 <include src="taglibs/auto/rapid/pages"/>
 <include src="taglibs/auto/rapid/forms"/>
-
-<def tag="view"><%= this %></def>
-
 <!--def tag="json-event">
   <view:name/>
 </def>

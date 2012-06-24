@@ -11,10 +11,7 @@
 </header>
 
 <section class="content-body">
-<div class="container rounded_left rounded_right" pointTime="0" dx="0" sppx="30"></div> 
-<a id="clickme">click</a> 
-<script src="script.js" type="text/javascript"/> 
-
+<iframe src="javascripts/timelines.html" width="100%" height="500px" />
     </section>
   </content:>
 
