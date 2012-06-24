@@ -1,0 +1,8 @@
+<%=
+require 'net/http'
+
+s = "{'id' : " + @get + ", 'name' : '" + @name + "', 'events' : [ "
+s += @s
+s += " ]}"
+s
+%>
