@@ -40,6 +40,7 @@ HoboApp::Application.routes.draw do
   get 'users/:id/account(.:format)' => 'users#account', :as => 'user_account'
   get 'users/:id/json(.:format)' => 'users#json', :as => 'user_json'
   get 'users/:id/unfollow_timeline(.:format)' => 'users#unfollow_timeline', :as => 'user_unfollow_timeline'
+  get 'users/:id/follow_timeline(.:format)' => 'users#follow_timeline', :as => 'user_follow_timeline'
 
   # User routes for controller "users"
   match 'login(.:format)' => 'users#login', :as => 'user_login'

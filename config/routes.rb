@@ -4,6 +4,8 @@ HoboApp::Application.routes.draw do
   match 'search' => 'front#search', :as => 'site_search'
 
   get 'users/:user_id/unfollow_timeline/:timeline_id(.:format)' => 'users#unfollow_timeline', :as => 'user_unfollow_timeline'
+  get 'users/:user_id/follow_timeline/:timeline_id(.:format)' => 'users#follow_timeline', :as => 'user_follow_timeline'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

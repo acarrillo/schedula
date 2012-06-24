@@ -43,5 +43,14 @@ class UsersController < ApplicationController
     timeline = Timeline.find(timeline_id)
     user.joined_timelines.delete(timeline)
   end
+  
+  show_action :follow_timeline
+  def follow_timeline
+    user_id = params[:user_id]
+    user = User.find(user_id)
+    timeline_id = params[:timeline_id]
+    timeline = Timeline.find(timeline_id)
+    user.joined_timelines += [timeline]
+  end
 
 end
