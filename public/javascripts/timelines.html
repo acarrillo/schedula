@@ -76,7 +76,6 @@
 				data: '',
  				success: function(data)
 				{ 					
-					alert("hi"); 					
 					$("div.timelineholder1 > ul.sortable").prepend('<li><div class="timeline"></div></li>');
  					$($("div.timelineholder1 > ul.sortable").children().get(0)).find(".timeline").each(function()
  					{
@@ -85,11 +84,7 @@
 						       .append(parsedData["name"]);
 		 			});
  				},
-                error: function(a, b, c) {
-	                alert("error: " + a + ", " + a.status + ", " + b + ", " + c);
-                }
                 });
- 				alert("hello");
 			}
 			
 			function addTimeline2()
