@@ -70,9 +70,21 @@
   <old-card merge>
     <append-body:>
 	  <div class="time">
-	    Start time:  <span class="start time"><view:start/></span> <br/>
-	    End finish:  <span class="start time"><view:finish/></span>
+	    <b>Start time:</b>  <span class="start time"><view:start/></span> <br/>
+	    <b>End finish:</b>  <span class="start time"><view:finish/></span>
 	  </div>
     </append-body:>
   </old-card>
+</extend>
+
+<extend tag="show-page" for="Event">
+  <old-show-page merge>
+    <content-body: param>
+      <view:description param="description" />
+      <br/>
+      <b>Start:</b>  <view:start param="start" format="%b %d, %l:%M %PM" />
+      <br/>
+      <b>End:</b>  <view:start param="finish" format="%b %d, %l:%M %PM" />
+    </content-body:>
+  </old-show-page>
 </extend>
