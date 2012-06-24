@@ -25,14 +25,23 @@ class UsersController < ApplicationController
     @id = params[:id]
     @user = User.find(@id)
     for @item in @user.timelines
-      @s += TimelinesController.json_from_id(@item.id) + ', '
+      @s += @item.id.to_s + ', '
     end
     @s += "], 'followed-timelines' : ["
     for @item in @user.joined_timelines
-      @s += TimelinesController.json_from_id(@item.id) + ', '
+      @s += @item.id.to_s + ', '
     end
     @s += "]}"
     @s
+  end
+  
+  show_action :unfollow_timeline
+  def unfollow_timeline
+    user_id = params[:user_id]
+    user = User.find(user_id)
+    timeline_id = params[:timeline_id]
+    timeline = Timeline.find(timeline_id)
+    user.joined_timelines.delete(timeline)
   end
 
 end

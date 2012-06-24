@@ -39,6 +39,7 @@ HoboApp::Application.routes.draw do
   # Show action routes for controller "users"
   get 'users/:id/account(.:format)' => 'users#account', :as => 'user_account'
   get 'users/:id/json(.:format)' => 'users#json', :as => 'user_json'
+  get 'users/:id/unfollow_timeline(.:format)' => 'users#unfollow_timeline', :as => 'user_unfollow_timeline'
 
   # User routes for controller "users"
   match 'login(.:format)' => 'users#login', :as => 'user_login'
