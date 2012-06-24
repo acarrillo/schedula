@@ -80,7 +80,9 @@
 					$("div.timelineholder1 > ul.sortable").prepend('<li><div class="timeline"></div></li>');
  					$($("div.timelineholder1 > ul.sortable").children().get(0)).find(".timeline").each(function()
  					{
-	 					
+	 					parsedData = $.parseJSON(data);
+						$(this).attr("id", "timeline" + parsedData["id"]).css("background-color", "red")
+						       .append(parsedData["name"]);
 		 			});
  				},
                 error: function(a, b, c) {
