@@ -57,6 +57,14 @@ HoboApp::Application.routes.draw do
   put 'events/:id(.:format)' => 'events#update', :as => 'update_event', :constraints => { :id => %r([^/.?]+) }
   delete 'events/:id(.:format)' => 'events#destroy', :as => 'destroy_event', :constraints => { :id => %r([^/.?]+) }
 
+# Resource routes for controller "events"
+  get 'events/new(.:format)', :as => 'new_event'
+  get 'events/:id/edit(.:format)' => 'events#edit', :as => 'edit_event'
+  get 'events/:id(.:format)' => 'events#show', :as => 'event', :constraints => { :id => %r([^/.?]+) }
+  post 'events(.:format)' => 'events#create', :as => 'create_event'
+  put 'events/:id(.:format)' => 'events#update', :as => 'update_event', :constraints => { :id => %r([^/.?]+) }
+  delete 'events/:id(.:format)' => 'events#destroy', :as => 'destroy_event', :constraints => { :id => %r([^/.?]+) }
+
   namespace :admin do
 
 

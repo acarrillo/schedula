@@ -3,8 +3,17 @@
 <include src="taglibs/auto/rapid/pages"/>
 <include src="taglibs/auto/rapid/forms"/>
 
+<def tag="card" for="Timeline">
+  <card class="timeline" param="default" merge>
+    <header: param>
+      <h4 param="heading"><a><name/></a></h4>
+    </header:>
+    <body: param>
+      Owner: <a:owner param="creator-link"/>
+    </body:>
+  </card>
+</def>
  
-<!--set-theme name="clean"/-->
 <def tag="magic-selective-collection">
 	<collection merge>
 		<item: param>
@@ -55,17 +64,6 @@
 
 		<content-body: param><field-list fields=""/></content-body:>
 	</old-show-page>
-</extend>
-
-<extend tag="card" for="Timeline">
-	<old-card merge>
-		<body: param>
-			Owner: <a:owner param="creator-link"/>
-			<div class="events">
-			Events: <repeat:events join=", "><a/></repeat><else>None</else>
-			</div>
-		</body:>
-	</old-card>
 </extend>
 
 <extend tag="card" for="Event">
