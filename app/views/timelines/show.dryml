@@ -1,9 +1,9 @@
 <show-page>
-  <collection: replace>
+<!--  <collection: replace>
   <table-plus:events fields="this, start">
     <empty-message:>No events match your criteria</empty-message:>
   </table-plus>
-  </collection:>
+  </collection:> -->
   <after-collection-section:> 
 
       <a:events action="new" if="&can_create?(EventAssignment)"> 
@@ -17,11 +17,6 @@
       </a:events> 
 
   </after-collection-section:> 
-
-</show-page>
-
-<!--show-page>
-
   <aside:>
   <form:followships.new update="followers" reset-form refocus-form>
     <input type="hidden" name="timeline_followship[user]" value="&current_user" />
@@ -33,4 +28,5 @@
     </collection>
   </aside:>
 
-</show-page-->
+</show-page>
+

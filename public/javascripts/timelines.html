@@ -76,7 +76,7 @@
 				data: '',
  				success: function(data)
 				{ 					
-					$("div.timelineholder1 > ul.sortable").prepend('<li><div class="timeline"></div></li>');
+					$("div.timelineholder1 > ul.sortable").prepend('<li><div class="timeline" style="font-family:sans-serif; font-size:15px;padding-top:20px; padding-bottom:0px"><a href=http://10.69.11.251:3003/timelines/1-i-have-a-name-now target=_blank>Your Timeline</a><div></li>');
  					$($("div.timelineholder1 > ul.sortable").children().get(0)).find(".timeline").each(function()
  					{
 	 					parsedData = $.parseJSON(data);
